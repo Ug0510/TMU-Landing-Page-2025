@@ -9,7 +9,7 @@ if (tabContainer) {
     function switchTabs(e) {
         const targetTab = e.target;
         const tabId = targetTab.getAttribute('data-id');
-        
+
         // Hide all panels and remove 'active' class from all tabs
         tabs.forEach(tab => {
             tab.classList.remove('active');
@@ -32,3 +32,50 @@ if (tabContainer) {
         tab.addEventListener('click', switchTabs);
     });
 }
+
+
+// creating the scrolling marquee feature in the recruiters section
+
+function createRecruiterDOM(itemCount) {
+    let firstHtml = '';
+    let secondHtml = '';
+    for (let i = 1; i <= itemCount; i++) {
+        
+        if(i <= itemCount/2)
+        {
+            firstHtml += `<div class="scrolling-div"><img src="./asset/img/recruiters/image_${i}.webp" class="recruiters-img" alt=""></div>`;
+        }
+
+        else
+        {
+            secondHtml += `<div class="scrolling-div"><img src="./asset/img/recruiters/image_${i}.webp" class="recruiters-img" alt=""></div>`;
+        }
+    }
+
+    return {
+        firstHtml : firstHtml,
+        secondHtml : secondHtml
+    }
+}
+
+function addRecruiters() {
+
+    const itemCount = 24;
+    const scrollingDiv = document.querySelector('.scrolling-divs');
+    const scrollingDiv2 = document.querySelector('.scrolling-divs.slower');
+
+    const {firstHtml, secondHtml} = createRecruiterDOM(itemCount);
+
+    if(scrollingDiv )
+    {
+        scrollingDiv.innerHTML = firstHtml + firstHtml + firstHtml; 
+    }
+    if(scrollingDiv2)
+    {
+        scrollingDiv2.innerHTML = secondHtml + secondHtml + secondHtml;
+    }
+}
+
+addRecruiters();
+
+

@@ -5,7 +5,8 @@
     font-family: 'Canela Text Trial', sans-serif;
 }
 body{
-    background-color: black;
+    width: 100vw;
+    overflow-x: hidden;
 }
 .banner-container{
     width: 100vw;
@@ -23,7 +24,6 @@ body{
 }
 .logo{
     position: absolute;
-    
     top:2rem;
     left: 9vw;
     z-index: 99;
@@ -163,7 +163,7 @@ body{
     }
 }
 #under-banner{
-    background-color: #00105560;
+    background-color: white;
     /* padding-bottom: 200px; */
     position: relative;
 }
@@ -182,26 +182,37 @@ body{
     z-index: 2;
 }
 .usp-card:hover::before{
-    transform: scaleY(0.9);
+    transform: scaleY(1.0);
+}
+.usp-card:hover::after{
+    transform: translate(-50%,-50%) scaleY(1.0);
 }
 
 .usp-card .usp-heading{
     font-size: 1.2rem;
     color:#FF7900;
+    color:#001055;
+    color:#FEC100;
 }
 .usp-card .usp-text{
     font-size: 0.7rem;
     text-align: center;
     margin-top: 0.7rem;
     max-width: 60%;
+    color:white
     
 }
 .usp-card::before{
     content: '';
     width: 100%;
     height: 100%;
-    background-color:#f6f4ee;
+    /* background-color:#f6f4ee;
+    background-color: #E39200;
+    background-color: #FEC100; */
+    background: url('../img/usp-back.png');
+    box-shadow: 5px 5px 10px 3px #FFFFFF10;
     position: absolute;
+    transform: scaleY(0.9);
     top:0;
     left:0;
     border-radius: 15px;
@@ -209,17 +220,34 @@ body{
     z-index: -1;
 }
 
+.usp-card::after {
+    content: '';
+    width: 95%;
+    height: 90%;
+    position: absolute;
+    border: 1px solid white;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%) scaleY(0.9);
+    border-radius: 8px;
+    transition: all .3s 0s ease-out;
+}
+
 .usp-btn{
     position: absolute;
     width: 70px;
     height: 70px;
-    border: 8px solid #001055;
+    background-image: url('../img/usp-back.png');
+    border: 5px solid white;
     bottom: 0;
     left: 50%;
     transform: translate(-50%,50%);
     border-radius: 50%;
-    background-color: #f6f4ee;
+    /* background-color: #f6f4ee; */
     transition: all .3s 0s ease-out;
+}
+.usp-btn svg{
+    color:#FEC100;
 }
 
 .usp-card:hover .usp-btn{
@@ -314,6 +342,7 @@ body{
     right:5vw;
     background-color: #f6f4ee;
     background-color: #FEC100;
+    /* background-color: #E39200; */
     /* background-color: transparent; */
     backdrop-filter: blur(10px);
     /* border:2px solid #001055; */
@@ -481,8 +510,18 @@ input[type="number"] {
 }
 
 .scrolling-divs.slower {
-    margin-left: -8rem;
-    margin-top: 0.7rem;
+    /* margin-left: -8rem;
+    margin-top: 0.7rem; */
+    animation: scroll 80s linear infinite; 
+
+}
+
+.recruiters-img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 /* Styling for each individual div */
@@ -493,8 +532,6 @@ input[type="number"] {
     justify-content: center;
     align-items: center;
     margin-right: 10px;
-    background-color: lightblue;
-    border: 2px solid #007bff;
     font-size: 24px;
     font-weight: bold;
 }
@@ -536,6 +573,4 @@ input[type="number"] {
         margin-left: -4.4rem;
         margin-top: 0.5rem;
     }
-    
-
 }
