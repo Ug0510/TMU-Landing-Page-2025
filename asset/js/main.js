@@ -286,3 +286,44 @@ addRecruiters();
          $(".custom-tab-content div").removeClass("active-content");
          $("#" + tabId).addClass("active-content");
      });
+
+     document.addEventListener('DOMContentLoaded', () => {
+        const galleryImages = document.querySelectorAll('.gallery-img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+
+        let currentIndex = 0;
+
+        const showImage = (index) => {
+            lightboxImg.src = galleryImages[index].src;
+            currentIndex = index;
+            lightbox.style.display = 'flex';
+        };
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => showImage(index));
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % galleryImages.length;
+            showImage(currentIndex);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            showImage(currentIndex);
+        });
+    });
