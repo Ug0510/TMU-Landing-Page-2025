@@ -2,7 +2,6 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: 'Canela Text Trial', sans-serif;
 }
 body{
     width: 100vw;
@@ -497,7 +496,7 @@ input[type="number"] {
     font-size: 15px;
     line-height: 45px;
     display: block;
-    padding: 0 20px;
+    padding: 0 50px;
     transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
   }
@@ -568,10 +567,25 @@ input[type="number"] {
   .tab-content.active {
     display: block;
   }
+
+  .tab-content .row{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .tab-content h2{
+    margin: 60px 0 0 30px;
+  }
   
   .gallery {
     display: flex;
-    gap: 10px;
+    gap: 5px;
+  }
+
+  .gallery .row>* {
+    padding-right: 2.5px;
+    padding-left: 2.5px;
+    
   }
   
   .gallery img {
@@ -581,6 +595,56 @@ input[type="number"] {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
+  .gallery-img1 {
+    width: 63.49vh;
+    height: 42.37vh;
+  }
+
+  .gallery-img2 {
+    width:  31.77;
+    height: 42.37vh;
+  }
+  @media screen and (max-width:1400px) {
+        #navbar-animmenu ul li a {
+            padding: 0 40px;
+
+        }
+    }
+
+    @media screen and (max-width:1200px) {
+        #navbar-animmenu ul li a {
+            padding: 0 25px;
+
+        }
+        #navbar-animmenu ul {
+            padding: 0 13%;
+        }
+    }
+
+    @media screen and (max-width:991px) {
+
+        #navbar-animmenu ul li a {
+            padding: 0 20px;
+
+        }
+
+        #navbar-animmenu ul {
+            padding: 0 9%;
+        }
+    }
+
+    @media screen and (max-width:766px) {
+
+        #navbar-animmenu ul li a {
+            padding: 0 15px;
+
+        }
+
+        #navbar-animmenu ul {
+            padding: 0 0%;
+        }
+    }
   
   /* Gallery section css end  */
   
