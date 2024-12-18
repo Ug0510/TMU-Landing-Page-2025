@@ -1,9 +1,18 @@
-
-/* General Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Canela Text Trial', sans-serif;
+}
+body{
+    width: 100vw;
+    overflow-x: hidden;
+}
+.banner-container{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
 .temp-banner{
@@ -300,147 +309,112 @@ input[type="number"] {
     font-size: 16px; /* Font size */
   }
 
-.carousel-item img {
-  transform: scale(1);
-  transition: transform 4s ease-in-out;
+  /* Prevent spinner buttons on Chrome/Safari */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"]:focus{
+    color:white;
+  }
+/* CSS for tab buttons */
+.tab-btn-container{
+    display: flex;
+    
+}
+.tab-btn{
+    padding: 8px 10px 4px 10px ;
+    text-align: center;
+    border:1px solid white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-color: transparent;
+    border-bottom-color: white;
+}
+.tab-btn:hover{
+    border: 1px solid white;
+}
+.tab-btn.active{
+    background-color: white;
+    color:black;
+}
+.tab-panel .panel{
+    display: none;
+}
+.tab-panel .panel.active{
+    display:block;
+}
+/* CSS for tab buttons ends*/
+
+/* CSS for button */
+.btn-custom-primary{
+    background-color: #001055;
+    background: linear-gradient(to right,#233A81,#3f5c9e);
+    max-width: 150px;
+    color:white;
+    display: block;
+    margin:auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+
+}
+.btn-custom-primary:hover{
+    background-color: #FF7900;
+    color:white;
+}
+.btn-custom-primary:active{
+    background-color: transparent;
+    border-color: #FF7900;
 }
 
-.carousel-item.active img {
-  transform: scale(1.2);
+.image{
+    position: absolute;
+    top:10vh;
+    width: 80vw;
+    left:50%;
+    transform: translateX(-50%);
 }
 
-.carousel-control-next,
-.carousel-control-prev {
-  filter: brightness(80%);
+
+
+ /* Container to hold the scrolling divs */
+ .scroll-container {
+    display: flex;
+    width: 100%;
+    position: relative;
 }
 
-/* Gallery section css start  */
-#navbar-animmenu {
-  background: #001055;
-  float: left;
-  overflow: hidden;
-  position: relative;
-  padding: 10px 0;
-  width: 100%;
-  border-radius: 30px;
+/* The row of divs that will scroll */
+.scrolling-divs {
+    display: flex;
+    animation: scroll 60s linear infinite; /* Slower speed by increasing duration */
 }
 
-#navbar-animmenu ul {
-  padding: 0 15%;
-  margin: 0;
-  display: flex;
+.scrolling-divs.slower {
+    /* margin-left: -8rem;
+    margin-top: 0.7rem; */
+    animation: scroll 80s linear infinite; 
+
 }
 
-#navbar-animmenu ul li {
-  list-style-type: none;
-  float: left;
+.recruiters-img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
-#navbar-animmenu ul li a {
-  color: rgba(255, 255, 255, 1);
-  text-decoration: none;
-  font-size: 15px;
-  line-height: 45px;
-  display: block;
-  padding: 0 20px;
-  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  position: relative;
-}
-
-#navbar-animmenu>ul>li.active>a {
-  color: #001055;
-  background-color: transparent;
-  transition: all 0.7s;
-}
-
-.hori-selector {
-  display: inline-block;
-  position: absolute;
-  height: 100%;
-  top: 10px;
-  left: 0;
-  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  background-color: #fff;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-.hori-selector .right,
-.hori-selector .left {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  background-color: #fff;
-  bottom: 10px;
-}
-
-.hori-selector .right {
-  right: -25px;
-}
-
-.hori-selector .left {
-  left: -25px;
-}
-
-.hori-selector .right:before,
-.hori-selector .left:before {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #001055;
-}
-
-.hori-selector .right:before {
-  bottom: 0;
-  right: -25px;
-}
-
-.hori-selector .left:before {
-  bottom: 0;
-  left: -25px;
-}
-
-.tab-content {
-  display: none;
-  padding: 20px;
-  background-color: #ffffff;
-  border: 1px solid #bebebe;
-  border-radius: 30px;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-.gallery {
-  display: flex;
-  gap: 10px;
-}
-
-.gallery img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Gallery section css end  */
-
-
-/* testimonial secion css start */
-
-.testimonial-container {
-  margin-top: 50px;
-  text-align: center;
-}
-.image-container {
-  display: flex;
+/* Styling for each individual div */
+.scrolling-div {
+    width: 250px;
+    height: 100px;
+    display: flex;
     justify-content: center;
     align-items: center;
-
     margin-right: 10px;
     font-size: 24px;
     font-weight: bold;
