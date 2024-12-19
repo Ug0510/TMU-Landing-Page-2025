@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Rounded Tabs with Content</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            display: flex;
+            background: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Vertical Navbar Menu */
+        #navbar-animmenu {
+            background: #001055;
+            width: 70px;
+            height: 100vh;
+            overflow: hidden;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+            border-radius: 10px 0 0 10px;
+        }
+
+        #navbar-animmenu ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        #navbar-animmenu ul li {
+            list-style-type: none;
+            margin: 10px 0;
+        }
+
+        #navbar-animmenu ul li a {
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            padding: 5px;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            margin: 0 auto;
+            background: #001055;
+            position: relative;
+            transition: 0.3s ease;
+        }
+
+        #navbar-animmenu ul li a:hover {
+            opacity: 0.8;
+        }
+
+        #navbar-animmenu ul li.active > a {
+            background: #001055;
+            opacity: 1;
+        }
+
+        #navbar-animmenu ul li:not(.active) a {
+            opacity: 0.6;
+            filter: brightness(0.9);
+        }
+
+        #navbar-animmenu ul li a img {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hori-selector {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            margin-top: 8px;
+            padding: 7px;
+            left: 33%;
+            background: linear-gradient(145deg, #ffffff, #ffffff);
+            border-radius: 50%;
+            transition: 0.3s ease;
+        }
+
+        /* Content Section */
+        .tab-content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .tab-content div {
+            display: none;
+        }
+
+        .tab-content div.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-animmenu">
+        <div class="hori-selector"></div>
+        <ul>
+            <li class="active" data-tab="dashboard">
+                <a href="javascript:void(0);"><img src="https://via.placeholder.com/45" alt="Dashboard"></a>
+            </li>
+            <li data-tab="address-book">
+                <a href="javascript:void(0);"><img src="https://via.placeholder.com/45" alt="Address Book"></a>
+            </li>
+            <li data-tab="components">
+                <a href="javascript:void(0);"><img src="https://via.placeholder.com/45" alt="Components"></a>
+            </li>
+            <li data-tab="calendar">
+                <a href="javascript:void(0);"><img src="https://via.placeholder.com/45" alt="Calendar"></a>
+            </li>
+            <li data-tab="charts">
+                <a href="javascript:void(0);"><img src="https://via.placeholder.com/45" alt="Charts"></a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+        <div id="dashboard" class="active">
+            <h2>Dashboard</h2>
+            <p>Welcome to the Dashboard! Here you can find an overview of all your activities.</p>
+        </div>
+        <div id="address-book">
+            <h2>Address Book</h2>
+            <p>Manage your contacts and keep them organized.</p>
+        </div>
+        <div id="components">
+            <h2>Components</h2>
+            <p>Browse and customize various components for your application.</p>
+        </div>
+        <div id="calendar">
+            <h2>Calendar</h2>
+            <p>Stay on top of your schedule with the calendar.</p>
+        </div>
+        <div id="charts">
+            <h2>Charts</h2>
+            <p>Analyze data using a variety of chart types.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Vertical Navbar Menu
+        var tabsNewAnim = $('#navbar-animmenu');
+        var activeItemNewAnim = tabsNewAnim.find('.active');
+        var activeHeightNewAnim = activeItemNewAnim.innerHeight();
+        var itemPosNewAnimTop = activeItemNewAnim.position();
+
+        $(".hori-selector").css({
+            "top": itemPosNewAnimTop.top + "px"
+        });
+
+        $("#navbar-animmenu").on("click", "li", function () {
+            $('#navbar-animmenu ul li').removeClass("active");
+            $(this).addClass('active');
+            var activeHeightNewAnim = $(this).innerHeight();
+            var itemPosNewAnimTop = $(this).position();
+            $(".hori-selector").css({
+                "top": itemPosNewAnimTop.top + "px",
+            });
+
+            // Tab content logic
+            const tabId = $(this).data("tab");
+            $(".tab-content div").removeClass("active");
+            $("#" + tabId).addClass("active");
+        });
+    </script>
+</body>
+</html>
