@@ -1036,3 +1036,8 @@ input[type="number"] {
                     transform: none;
                     font-size: 2rem;
                 }
+
+                .usp-img{
+                    height: 140px;
+                    width: auto;
+                }
