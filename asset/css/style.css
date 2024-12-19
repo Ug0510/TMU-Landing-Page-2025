@@ -7,6 +7,9 @@ body{
     width: 100vw;
     overflow-x: hidden;
 }
+:root {
+  --yellow-shade:#FEC100;
+}
 .banner-container{
     width: 100vw;
     height: 100vh;
@@ -71,7 +74,7 @@ body{
     font-size: 1.2rem;
     color:#FF7900;
     color:#001055;
-    color:#FEC100;
+    color:var(--yellow-shade);
 }
 .usp-card .usp-text{
     font-size: 0.7rem;
@@ -87,7 +90,7 @@ body{
     height: 100%;
     /* background-color:#f6f4ee;
     background-color: #E39200;
-    background-color: #FEC100; */
+    background-color: var(--yellow-shade); */
     background: url('../img/usp-back.png');
     box-shadow: 5px 5px 10px 3px #FFFFFF10;
     position: absolute;
@@ -126,7 +129,7 @@ body{
     transition: all .3s 0s ease-out;
 }
 .usp-btn svg{
-    color:#FEC100;
+    color:var(--yellow-shade);
 }
 
 .usp-card:hover .usp-btn{
@@ -224,7 +227,7 @@ body{
     top:2vh;
     right:5vw;
     background-color: #f6f4ee;
-    background-color: #FEC100;
+    background-color: var(--yellow-shade);
     /* background-color: #E39200; */
     /* background-color: transparent; */
     backdrop-filter: blur(10px);
@@ -390,13 +393,32 @@ input[type="number"] {
 .scrolling-divs {
     display: flex;
     animation: scroll 60s linear infinite; /* Slower speed by increasing duration */
+    /* transform: perspective(800px) rotateX(15deg); */
+    position: relative;
+    padding-top: 2rem;
 }
 
 .scrolling-divs.slower {
     /* margin-left: -8rem;
     margin-top: 0.7rem; */
-    animation: scroll 80s linear infinite; 
+    animation: scroll-reverse 60s linear infinite; 
 
+}
+.curved-div {
+  /* animation: curve-animation 5s infinite alternate; */
+  overflow: hidden;
+  /* border-radius: 50%; */
+  transform: perspective(800px) rotateX(30deg);
+  /* border:2px solid aqua; */
+}
+
+@keyframes curve-animation {
+  0% {
+    transform: perspective(800px) rotateX(15deg);
+  }
+  100% {
+    transform: perspective(800px) rotateX(45deg);
+  }
 }
 
 .recruiters-img{
@@ -405,6 +427,10 @@ input[type="number"] {
     width: auto;
     height: auto;
     object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px 2px #00000030;
+    padding: 0.4rem 1rem;
+    margin-bottom: 2rem;
 }
 
 /* Styling for each individual div */
@@ -427,6 +453,15 @@ input[type="number"] {
     100% {
         transform: translateX(-100%);
     }
+}
+
+@keyframes scroll-reverse {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(0%);
+  }
 }
 
 @keyframes scrolls {
@@ -466,6 +501,22 @@ input[type="number"] {
     margin-bottom: 1rem;
     text-transform: uppercase;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  }
+
+.page-heading::before
+{
+  content: '';
+  position: absolute;
+  width: 50%;
+  max-width: 220px;
+  bottom:0;
+  left:42.5%;
+  height: 3px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: var(--yellow-shade);
+
 }
 
 /* Gallery section css start  */
@@ -1036,3 +1087,28 @@ input[type="number"] {
                     transform: none;
                     font-size: 2rem;
                 }
+
+
+                .recruit-img {
+                  display: grid;
+                  /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+                  grid-template-columns: repeat(6, 1fr);
+  
+                  /* Flexible columns */
+                  gap: 40px;
+                  /* Space between images */
+                  padding: 10px;
+                  /* Optional: Add padding around the grid */
+                  justify-content: center;
+                  /* Center the grid items */
+                  align-items: center;
+                  /* Align items vertically */
+              }
+  
+              .recruit-img img {
+                  width: 100%;
+                  height: auto;
+                  border-radius: 5px;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                  background-color: white;
+              }
