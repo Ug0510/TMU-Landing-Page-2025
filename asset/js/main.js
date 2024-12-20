@@ -334,6 +334,7 @@ const vidFrame = document.querySelector(".vid-frame");
 const thumbnail = document.getElementById("thumbnail");
 const popup = document.getElementById('popup');
 const closeButton = document.querySelector('.close-button');
+const iframe = popup.querySelector('iframe');
 
 const predefinedDots = Array.from(container.children); // Select the 5 predefined dots
 
@@ -361,6 +362,20 @@ function calculateRadius() {
     radius = containerWidth / val;
 }
 
+// function to return iframe src as per the id 
+function getVidSrc(id){
+  
+    switch(id)
+    {
+        case '1':
+            return 'https://www.youtube.com/embed/tmzjg4HDQAI?si=cqG75q4E62mesFxz';
+        case '2':
+            return 'https://www.youtube.com/embed/NL8D4wwUXaA?si=AkynM0snMOM6uxcJ';
+        default:
+            return 'https://www.youtube.com/embed/5rZSGSViPso?si=sZO54Wh6lE14nPI4';
+    }
+}
+
 function updateDots() {
     calculateRadius();
     dots.forEach((dot, index) => {
@@ -368,9 +383,6 @@ function updateDots() {
         const radian = (angle * Math.PI) / 180;
         const x = radius * Math.cos(radian);
         const y = radius * Math.sin(radian);
-
-        console.log('---');
-        console.log(angle);
 
         if (window.innerWidth <= 540)
             dot.style.transform = `translate(${x}px, ${y}px) rotate(-90deg)`;
@@ -397,7 +409,8 @@ function updateDots() {
             const id = dot.dataset.id;
             dot.setAttribute('data-angle',angle);
             thumbnail.src = `./asset/img/vid-banner${id}.png`;
-            thumbnail.dataset.video = `https://www.youtube.com/embed/5rZSGSViPso?si=sZO54Wh6lE14nPI4`; // Update video source
+            const path = getVidSrc(id);
+            iframe.setAttribute('src',path); // Update video source
             if (window.innerWidth <= 540) {
                 dot.style.transform = `translate(${x}px, ${y}px) scale(1.6) rotate(-90deg)`;
             } else {
@@ -414,15 +427,10 @@ function updateDots() {
 }
 
 thumbnail.addEventListener("click", () => {
-    const videoSrc = thumbnail.dataset.video;
-    vidFrame.innerHTML = `
-    `;
 
-
+    popup.style.display = 'flex';
     // Call the function when needed (e.g., button click)
-    const iframe = vidFrame.querySelector('iframe');
     iframe.setAttribute('src', iframe.getAttribute('src') + '&autoplay=1');
-
 });
 
 function rotateDots(direction) {
@@ -433,21 +441,19 @@ function rotateDots(direction) {
 window.addEventListener("resize", updateDots);
 updateDots();
 
+function closePopup(){
+    popup.style.display = 'none';
+    iframe.setAttribute('src','');
+    updateDots();
+}
 
-(function (){
-    // popup.style.display = 'flex';
-})();
-
-      
-
-        // Close popup when close button is clicked
-        closeButton.addEventListener('click', () => {
-            popup.style.display = 'none';
-        });
-
-        // Close popup when clicking outside the iframe
-        popup.addEventListener('click', (e) => {
-            if (!e.target.closest('.popup-content')) {
-                popup.style.display = 'none';
-            }
-        });
+    // Close popup when close button is clicked
+closeButton.addEventListener('click', () => {
+    closePopup();
+});
+// Close popup when clicking outside the iframe
+popup.addEventListener('click', (e) => {
+    if (!e.target.closest('.popup-content')) {
+        closePopup();
+    }
+});
