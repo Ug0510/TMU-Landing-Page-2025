@@ -1135,12 +1135,36 @@ input[type="number"]:focus {
 
 /* Content Section start ends*/
 
+                .usp-img{
+                    height: 140px;
+                    width: auto;
+                }
 
-.usp-img{
-    height: 140px;
-    width: auto;
-}
 
+                .recruit-img {
+                  display: grid;
+                  /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+                  grid-template-columns: repeat(6, 1fr);
+  
+                  /* Flexible columns */
+                  gap: 40px;
+                  /* Space between images */
+                  padding: 10px;
+                  /* Optional: Add padding around the grid */
+                  justify-content: center;
+                  /* Center the grid items */
+                  align-items: center;
+                  /* Align items vertically */
+              }
+  
+              .recruit-img img {
+                  width: 100%;
+                  height: auto;
+                  border-radius: 5px;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                  background-color: white;
+              }
+              
 .gallery img {
   width: 100%;
   height: auto;
