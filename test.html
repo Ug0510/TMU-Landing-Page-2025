@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Circular Dots with Images and Names</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --yellow-shade: #FEC100;
+        }
+
+        body {
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #video-testimonial {
+            /* border: 2px solid red; */
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .circle-container {
+            position: relative;
+            width: 80vw;
+            height: 80vw;
+            max-width: 600px;
+            max-height: 600px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 14px solid var(--yellow-shade);
+            transform: translateX(-50%);
+        }
+
+        .circle-container::before{
+            content: '';
+            position: absolute;
+            width: 170%;
+            height: 170%;
+            border-radius: 50%;
+            border: 14px solid var(--yellow-shade);
+        }
+
+        .dot {
+            position: absolute;
+            width: 8vw;
+            /* Responsive size for dots */
+            height: 10vw;
+            /* Slightly taller to fit image and text */
+            max-width: 80px;
+            max-height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: black;
+            font-size: 0.8rem;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .dot img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .dot.active {
+            transform: scale(1.2);
+            /* background-color: #00f; */
+            filter: drop-shadow(0 0 5px #00000030);
+            /* drop-shadow:  */
+        }
+
+        .dot.near-active {
+            transform: scale(1.1);
+            /* background-color: #0f0; */
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 10vh;
+            left: 55vw;
+            display: flex;
+            gap: 10px;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            background-color: #222;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .controls button:hover {
+            background-color: #00f;
+        }
+
+        /* Media Queries for Smaller Screens */
+        @media (max-width: 768px) {
+            .circle-container {
+                width: 90vw;
+                height: 90vw;
+            }
+
+            .dot {
+                width: 10vw;
+                height: 12vw;
+                max-width: 60px;
+                max-height: 80px;
+            }
+
+            .controls button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .circle-container {
+                width: 95vw;
+                height: 95vw;
+                transform: rotate(90deg);
+            }
+
+
+            .dot {
+                width: 12vw;
+                height: 14vw;
+                max-width: 50px;
+                max-height: 70px;
+            }
+
+            .controls button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="video-testimonial">
+
+        <div class="row h-100">
+            <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                <div class="circle-container" id="circleContainer">
+                    <!-- Predefined 5 dots -->
+                    <div class="dot">
+                        <img src="https://via.placeholder.com/80" alt="Person 1">
+                        <span>Person 1</span>
+                    </div>
+                    <div class="dot">
+                        <img src="https://via.placeholder.com/80" alt="Person 2">
+                        <span>Person 2</span>
+                    </div>
+                    <div class="dot">
+                        <img src="https://via.placeholder.com/80" alt="Person 3">
+                        <span>Person 3</span>
+                    </div>
+                    <div class="dot">
+                        <img src="https://via.placeholder.com/80" alt="Person 4">
+                        <span>Person 4</span>
+                    </div>
+                    <div class="dot">
+                        <img src="https://via.placeholder.com/80" alt="Person 5">
+                        <span>Person 5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7 border-start d-flex justify-content-center align-items-center">
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/7spXVc8Eba8?si=qZ8s9y2rzBhHIzjS&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                <div class="vid-frame">
+                    <img src="./asset/img/vid-banner.png" style="max-width: 40vw; border-radius: 15px;" alt="">
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="controls">
+            <button onclick="rotateDots(-1)">Previous</button>
+            <button onclick="rotateDots(1)">Next</button>
+        </div>
+
+
+
+    </section>
+
+    <script>
+        const container = document.getElementById("circleContainer");
+        const predefinedDots = Array.from(container.children); // Select the 5 predefined dots
+
+        // Clone the predefined dots to make a total of 10 dots
+        predefinedDots.forEach(dot => {
+            const clonedDot = dot.cloneNode(true);
+            container.appendChild(clonedDot);
+        });
+
+        const dots = Array.from(container.children);
+        const totalDots = dots.length;
+        let radius;
+        let currentIndex = 0;
+
+        function calculateRadius() {
+            const containerWidth = container.offsetWidth;
+            radius = containerWidth / 1.6;
+        }
+
+        function updateDots() {
+            calculateRadius();
+            dots.forEach((dot, index) => {
+                const angle = ((index - currentIndex + totalDots) % totalDots) * (360 / totalDots);
+                const radian = (angle * Math.PI) / 180;
+                const x = radius * Math.cos(radian);
+                const y = radius * Math.sin(radian);
+
+                // Position the dot
+
+                if (window.innerWidth <= 540)
+                    dot.style.transform = `translate(${x}px, ${y}px) rotate(-90deg)`;
+                else
+                    dot.style.transform = `translate(${x}px, ${y}px)`;
+
+                // Remove all scaling classes
+                dot.classList.remove("active", "near-active");
+
+                // Add the active and near-active classes based on angle
+                if (angle === 0) {
+                    dot.classList.add("active");
+                    if (window.innerWidth <= 540) {
+                        dot.style.transform = `translate(${x}px, ${y}px) scale(1.8) rotate(-90deg)`;
+                    }
+                    else {
+                        dot.style.transform = `translate(${x}px, ${y}px) scale(1.8) `;
+                    }
+                } else if (angle === 36 || angle === 324) {
+                    dot.classList.add("near-active"); // Near-active dots
+                    if (window.innerWidth <= 540)
+                        dot.style.transform = `translate(${x}px, ${y}px) scale(1.4) rotate(-90deg)`;
+                    else
+                        dot.style.transform = `translate(${x}px, ${y}px) scale(1.4)`;
+                }
+            });
+        }
+
+        function rotateDots(direction) {
+            currentIndex = (currentIndex - direction + totalDots) % totalDots;
+            updateDots();
+        }
+
+        window.addEventListener("resize", updateDots);
+        updateDots();
+    </script>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
