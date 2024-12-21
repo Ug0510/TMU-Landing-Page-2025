@@ -476,83 +476,6 @@
 
         
 
-        <section class="container">
-            <div class="row justify-content-center ">
-                <div class="col-xl-10 col-lg-10 text-center">
-                    <h2 class="tmu-text-primary my-3"><span>Testimonial</span></h2>
-                </div>
-            </div>
-
-            <div class="testimonial-container">
-                <div class="image-container">
-                    <div class="navigation">
-                        <span class="nav-arrow" onclick="showPreviousReview()">&#10094;</span>
-                        <span class="nav-arrow" onclick="showNextReview()">&#10095;</span>
-                    </div>
-
-                    <!-- Lazy loaded thumbnail images with data-bg attribute -->
-                    <div class="thumb" onclick="displayReviewByIndex(0)"
-                        style="background-image: url(&quot;asset/img/testimonial/1.png&quot;);"></div>
-                    <div class="thumb" onclick="displayReviewByIndex(1)"
-                        style="background-image: url(&quot;asset/img/testimonial/2.png&quot;);"></div>
-                    <div class="thumb" onclick="displayReviewByIndex(2)"
-                        style="background-image: url(&quot;asset/img/testimonial/3.png&quot;);"></div>
-                    <div class="thumb" onclick="displayReviewByIndex(3)"
-                        style="background-image: url(&quot;asset/img/testimonial/1.png&quot;);"></div>
-                    <div class="thumb" onclick="displayReviewByIndex(4)"
-                        style="background-image: url(&quot;asset/img/testimonial/2.png&quot;);"></div>
-                    <div class="thumb" onclick="displayReviewByIndex(5)"
-                        style="background-image: url(&quot;asset/img/testimonial/3.png&quot;);"></div>
-                    <div class="thumb" onclick="displayReviewByIndex(6)"
-                        style="background-image: url(&quot;asset/img/testimonial/2.png&quot;);"></div>
-
-                </div>
-            </div>
-
-            <div class="content-section">
-                <div class="profile-section">
-                    <!-- Lazy loading profile picture -->
-                    <img id="profile-picture" class="profile-picture" src="" alt="Profile Image" loading="lazy" />
-                    <div class="profile-details">
-                        <h2 id="profile-name"></h2>
-                        <a id="profile-link" href="#">LinkedIn
-                            <!-- Lazy load LinkedIn icon -->
-                            <img src="{{asset('/assets/img/icons/alumni/linkedin.svg')}}" alt="LinkedIn Icon"
-                                class="alumni-icon" loading="lazy" />
-                        </a>
-                        <div class="profile-info">
-                            <p><img src="{{asset('/assets/img/icons/alumni/user.svg')}}" class="alumni-icon"
-                                    loading="lazy" />
-                                <span id="profile-designation"></span>
-                            </p>
-                            <p><img src="{{asset('/assets/img/icons/alumni/office-building.svg')}}" class="alumni-icon"
-                                    loading="lazy" />
-                                <span id="profile-company"></span>
-                            </p>
-                            <p><img src="{{asset('/assets/img/icons/alumni/book.svg')}}" class="alumni-icon"
-                                    loading="lazy" />
-                                <span id="profile-course"></span>
-                            </p>
-                            <p><img src="{{asset('/assets/img/icons/alumni/calendar.svg')}}" class="alumni-icon"
-                                    loading="lazy" />
-                                <span id="profile-graduationYear"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div id="testimonial-wrapper" class="text">
-                        <div class="quote"></div>
-                        <div class="testimonial-title">Rediscovering Dreams with upGrad Campus</div>
-                        <div class="testimonial-text review-text">"I always wanted to be a game developer, so I began
-                            searching for universities related to my interest. I found one in Japan and applied. My
-                            happiness ..."</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
 
         <!-- Recruiters Section  -->
         <section class="mb-5">
@@ -657,188 +580,105 @@
                 </div>
     
         </section>
-        
-        <div class="conainer row usp-bg">
-            <div class="container col-md-6 col-12 pt-5" style="background-color: #fec100; padding: 50px;">
-                <div class="usp container mt-5">
-                    <div class="usp-section">
-                        <div class="content123">
-                            <h3 class="text-center">Our Most Prominent Research Projects</h3>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="usp-box">
-                                        <h4>179 Lakhs</h4>
-                                        <p>Royal Academy Of Engineering, UK</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="usp-box">
-                                        <h4>289 Lakhs</h4>
-                                        <p>ICMR (Indian Council of Medical Research)</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="usp-box">
-                                        <h4>63 Lakhs</h4>
-                                        <p>European Union Funded CABCIN Project</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="usp-box">
-                                        <h4>82 Lakhs</h4>
-                                        <p>Gujarat Council of Science Technology</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="usp-box">
-                                        <h4>63 Lakhs</h4>
-                                        <p>European Union Funded CABCIN Project</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="usp-box">
-                                        <h4>82 Lakhs</h4>
-                                        <p>Gujarat Council of Science Technology</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+        <div class="container my-5">
+            <h2 class="text-center mb-4 page-heading mb-5">Proven to Be Excellent</h2>
+            <div class="row mt-5 pt-3">
+                <div class="col-5">
+                    <img class="side-image" src="asset/img/awards/award.png" alt="">
                 </div>
+            <div class="col-7">
+            <div class="row g-3">
+              <!-- Repeat this column for each image -->
+              <div class="col-3 gallery-item">
+                <img src="asset/img/awards/1-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 1">
+              </div>
+              <div class="col-3 gallery-item">
+                <img src="asset/img/awards/2-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 2">
+              </div>
+              <div class="col-3 gallery-item">
+                <img src="asset/img/awards/3-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 1">
+              </div>
+              <div class="col-3 gallery-item-corner">
+                <img src="asset/img/awards/4-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 2">
+              </div>
+              <div class="col-3 gallery-item">
+                <img src="asset/img/awards/5-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 1">
+              </div>
+              <div class="col-3 gallery-item">
+                <img src="asset/img/awards/6-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 2">
+              </div>
+              <div class="col-3 gallery-item">
+                <img src="asset/img/awards/7-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 1">
+              </div>
+              <div class="col-3 gallery-item-corner">
+                <img src="asset/img/awards/8-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 2">
+              </div>
+              <div class="col-3 gallery-item">
+                <img src="asset/img/awards/9-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 1">
+              </div>
+              <div class="col-3 gallery-item">
+                <img src="asset/img/awards/10-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 2">
+              </div>
+              <div class="col-3 gallery-item">
+                <img src="asset/img/awards/11-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 1">
+              </div>
+              <div class="col-3 gallery-item-corner">
+                <img src="asset/img/awards/12-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 2">
+              </div>
+              <div class="col-3 gallery-item-bottom">
+                <img src="asset/img/awards/13-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 1">
+              </div>
+              <div class="col-3 gallery-item-bottom">
+                <img src="asset/img/awards/14-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 2">
+              </div>
+              <div class="col-3 gallery-item-bottom">
+                <img src="asset/img/awards/15-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 1">
+              </div>
+              <div class="col-3">
+                <img src="asset/img/awards/16-01.png" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 2">
+              </div>
+              <!--
+                 Add more columns as needed -->
             </div>
-            <div class="col-md-6 col-12">
-                <h2 class="text-center page-heading mt-5">Awards Section</h2>
-                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner p-5">
-                        <!-- First Slide -->
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/1-01.png" class="d-block w-100" alt="Image 1">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/2-01.png" class="d-block w-100" alt="Image 2">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/3-01.png" class="d-block w-100" alt="Image 1">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/4-01.png" class="d-block w-100" alt="Image 2">
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <!-- Second Slide -->
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/5-01.png" class="d-block w-100" alt="Image 3">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/6-01.png" class="d-block w-100" alt="Image 4">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/7-01.png" class="d-block w-100" alt="Image 3">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/8-01.png" class="d-block w-100" alt="Image 4">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Third Slide -->
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/9-01.png" class="d-block w-100" alt="Image 5">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/10-01.png" class="d-block w-100" alt="Image 6">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/11-01.png" class="d-block w-100" alt="Image 7">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/12-01.png" class="d-block w-100" alt="Image 8">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Fourth Slide -->
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/13-01.png" class="d-block w-100" alt="Image 7">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/14-01.png" class="d-block w-100" alt="Image 8">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/15-01.png" class="d-block w-100" alt="Image 7">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/16-01.png" class="d-block w-100" alt="Image 8">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Fifth Slide -->
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/17-01.png" class="d-block w-100" alt="Image 9">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/18-01.png" class="d-block w-100" alt="Image 10">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/19-01.png" class="d-block w-100" alt="Image 7">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/20-01.png" class="d-block w-100" alt="Image 8">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Sixth Slide -->
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/21-01.png" class="d-block w-100" alt="Image 11">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/22-01.png" class="d-block w-100" alt="Image 12">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="asset/img/awards/23-01.png" class="d-block w-100" alt="Image 7">
-                                </div>
-                                <div class="col-6">
-                                    <img src="asset/img/awards/24-01.png" class="d-block w-100" alt="Image 8">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Carousel controls -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-            
         </div>
+        </div>
+          </div>
+        
+          <!-- Lightbox Modal -->
+          <div class="modal fade" id="lightboxModal2" tabindex="-1" aria-labelledby="lightboxModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="carouselLightbox" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <!-- Example for one slide -->
+                      <div class="carousel-item active">
+                        <img src="asset/img/awards/1-01.png" class="d-block w-100" alt="Image 1">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="asset/img/awards/1-01.png" class="d-block w-100" alt="Image 2">
+                      </div>
+                      <!-- Add more carousel items for additional images -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselLightbox" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselLightbox" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
 
 
 
