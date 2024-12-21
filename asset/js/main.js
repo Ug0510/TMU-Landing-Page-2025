@@ -364,9 +364,11 @@ let currentIndex = 0;
 function calculateRadius() {
     const containerWidth = container.offsetWidth;
     let val = 0.9;
+    
     if (window.innerWidth <= 540) {
-        val = 1.6;
+        val = 1.5;
     }
+    
     radius = containerWidth / val;
 }
 
@@ -392,7 +394,7 @@ function updateDots() {
         const x = radius * Math.cos(radian);
         const y = radius * Math.sin(radian);
 
-        if (window.innerWidth <= 540)
+        if (window.innerWidth <= 992)
             dot.style.transform = `translate(${x}px, ${y}px) rotate(-90deg)`;
         else
             dot.style.transform = `translate(${x}px, ${y}px)`;
@@ -419,14 +421,14 @@ function updateDots() {
             thumbnail.src = `./asset/img/vid-banner${id}.png`;
             const path = getVidSrc(id);
             iframe.setAttribute('src',path); // Update video source
-            if (window.innerWidth <= 540) {
+            if (window.innerWidth <= 992) {
                 dot.style.transform = `translate(${x}px, ${y}px) scale(1.6) rotate(-90deg)`;
             } else {
                 dot.style.transform = `translate(${x}px, ${y}px) scale(1.6)`;
             }
         } else if (angle === 24 || angle === 336) {
             dot.classList.add("near-active");
-            if (window.innerWidth <= 540)
+            if (window.innerWidth <= 992)
                 dot.style.transform = `translate(${x}px, ${y}px) scale(1.3) rotate(-90deg)`;
             else
                 dot.style.transform = `translate(${x}px, ${y}px) scale(1.2)`;
