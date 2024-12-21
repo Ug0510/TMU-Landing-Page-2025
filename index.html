@@ -30,7 +30,19 @@
                 <img src="./asset/img/logo_white.png" alt="">
             </div> -->
             <div class="temp-banner">
+                <!-- <video class="w-100" autoplay mute loop>
+                    <source src="./asset/video/banner-video.mp4" type="video/mp4">
+                </video> -->
+                <video id="videoElement" class="w-100 h-100" controls></video>
             </div>
+
+            <script>
+                // Initialize dash.js player
+                var player = dashjs.MediaPlayer().create();
+                
+                // Set the source of the video player (MPD manifest file)
+                player.initialize(document.querySelector("#videoElement"), "https://yourserver.com/path/to/your/manifest.mpd", true);
+              </script>
             <!-- <div class="banner-overlay"></div> -->
             <!-- <div class="text row d-block mx-auto">
                 <div class="col-12 col-lg-9 row mx-auto mx-lg-0 " style="vertical-align: top;">
@@ -164,16 +176,16 @@
             <div class="container usp-container">
                 <div class="row pb-4">
                     <div class="col-6 col-lg-3 mt-4 mt-lg-0 pb-3">
-                        <img class="usp-img" src="asset/img/usp/1.jpg">
+                        <img class="usp-img" src="asset/img/usp/usp-start.jpeg">
                     </div>
                     <div class="col-6 col-lg-3 mt-4 mt-lg-0 pb-3">
-                        <img class="usp-img" src="asset/img/usp/1.jpg">
+                        <img class="usp-img" src="asset/img/usp/usp-2.jpeg">
                     </div>
                     <div class="col-6 col-lg-3 mt-5 mt-lg-0 pt-3 pt-lg-0">
-                        <img class="usp-img" src="asset/img/usp/1.jpg">
+                        <img class="usp-img" src="asset/img/usp/usp-2.jpeg">
                     </div>
                     <div class="col-6 col-lg-3 mt-5 mt-lg-0 pt-3 pt-lg-0">
-                        <img class="usp-img" src="asset/img/usp/1.jpg">
+                        <img class="usp-img" src="asset/img/usp/usp-end.jpeg">
                     </div>
 
                 </div>
@@ -727,31 +739,35 @@
             <div class="p-5">
                 <div class="row px-5">
                     <div class="page-heading mb-5 ">Recruiters</div>
-                    <div class="col-12 recruit-img mt-4">
-                        <img src="./asset/img/recruiters/image_1.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_2.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_3.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_4.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_5.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_6.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_7.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_8.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_18.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_10.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_11.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_9.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_12.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_13.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_14.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_15.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_16.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_17.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_19.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_20.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_21.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_22.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_23.webp" class="w-100" alt="">
-                        <img src="./asset/img/recruiters/image_24.webp" class="w-100" alt="">
+                    <div class="recruit-img-container47">
+                        <div class="recruit-img47">
+                            <img src="./asset/img/recruiters/image_1.webp" alt="">
+                            <img src="./asset/img/recruiters/image_2.webp" alt="">
+                            <img src="./asset/img/recruiters/image_3.webp" alt="">
+                            <img src="./asset/img/recruiters/image_4.webp" alt="">
+                            <img src="./asset/img/recruiters/image_5.webp" alt="">
+                            <img src="./asset/img/recruiters/image_6.webp" alt="">
+                            <img src="./asset/img/recruiters/image_7.webp" alt="">
+                            <img src="./asset/img/recruiters/image_8.webp" alt="">
+                            <img src="./asset/img/recruiters/image_18.webp" alt="">
+                            <img src="./asset/img/recruiters/image_10.webp" alt="">
+                            <img src="./asset/img/recruiters/image_11.webp" alt="">
+                            <img src="./asset/img/recruiters/image_9.webp" alt="">
+                        </div>
+                        <div class="recruit-img47 reverse47">
+                            <img src="./asset/img/recruiters/image_12.webp" alt="">
+                            <img src="./asset/img/recruiters/image_13.webp" alt="">
+                            <img src="./asset/img/recruiters/image_14.webp" alt="">
+                            <img src="./asset/img/recruiters/image_15.webp" alt="">
+                            <img src="./asset/img/recruiters/image_16.webp" alt="">
+                            <img src="./asset/img/recruiters/image_17.webp" alt="">
+                            <img src="./asset/img/recruiters/image_19.webp" alt="">
+                            <img src="./asset/img/recruiters/image_20.webp" alt="">
+                            <img src="./asset/img/recruiters/image_21.webp" alt="">
+                            <img src="./asset/img/recruiters/image_22.webp" alt="">
+                            <img src="./asset/img/recruiters/image_23.webp" alt="">
+                            <img src="./asset/img/recruiters/image_24.webp" alt="">
+                        </div>
                     </div>
                     <!-- <div class="col-4 p-2 d-flex justify-content-center align-items-center side-heading">
                         Collaborating with Top-Recruiters

@@ -56,6 +56,14 @@ function createRecruiterDOM(itemCount) {
     }
 }
 
+// JavaScript to dynamically duplicate rows to ensure seamless scrolling
+const containers = document.querySelectorAll('.recruit-img47');
+
+containers.forEach(container => {
+    const images = container.innerHTML;
+    container.innerHTML += images; // Duplicate the images for infinite scrolling effect
+});
+
 function addRecruiters() {
 
     const itemCount = 24;

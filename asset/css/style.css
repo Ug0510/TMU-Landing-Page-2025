@@ -11,6 +11,7 @@ body {
 
 :root {
   --yellow-shade: #FEC100;
+  --marquee-speed: 20s;
 }
 
 .banner-container {
@@ -21,10 +22,10 @@ body {
 }
 
 .temp-banner {
-  background-image: url(../img/banner.jpg);
+  /* background-image: url(../img/banner.jpg); */
   width: 100%;
   height: 100%;
-  background-size: cover;
+  /* background-size: cover; */
   /* animation: zoom-in 6s ease-in-out alternate-reverse infinite; */
 }
 
@@ -436,126 +437,6 @@ input[type="number"]:focus {
   transform: translateX(-50%);
 }
 
-
-
-/* Container to hold the scrolling divs */
-.scroll-container {
-  display: flex;
-  width: 100%;
-  position: relative;
-}
-
-/* The row of divs that will scroll */
-.scrolling-divs {
-  display: flex;
-  animation: scroll 60s linear infinite;
-  /* Slower speed by increasing duration */
-  /* transform: perspective(800px) rotateX(15deg); */
-  position: relative;
-  padding-top: 2rem;
-}
-
-.scrolling-divs.slower {
-  /* margin-left: -8rem;
-    margin-top: 0.7rem; */
-  animation: scroll-reverse 60s linear infinite;
-
-}
-
-.curved-div {
-  /* animation: curve-animation 5s infinite alternate; */
-  overflow: hidden;
-  /* border-radius: 50%; */
-  transform: perspective(800px) rotateX(30deg);
-  /* border:2px solid aqua; */
-}
-
-@keyframes curve-animation {
-  0% {
-    transform: perspective(800px) rotateX(15deg);
-  }
-
-  100% {
-    transform: perspective(800px) rotateX(45deg);
-  }
-}
-
-.recruiters-img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 4px 4px 8px 2px #00000030;
-  padding: 0.4rem 1rem;
-  margin-bottom: 2rem;
-}
-
-/* Styling for each individual div */
-.scrolling-div {
-  width: 250px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-/* Animation for continuous scroll from right to left */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes scroll-reverse {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes scrolls {
-  0% {
-    transform: translateX(20%);
-  }
-
-  100% {
-    transform: translateX(-120%);
-  }
-}
-
-/* To make sure the second set of divs appears right after the first one */
-.scrolling-divs>div {
-  flex-shrink: 0;
-  /* Prevents the divs from shrinking */
-}
-
-@media screen and (max-width:540px) {
-  .scrolling-div {
-    width: 125px;
-    height: 50px;
-  }
-
-  .scroll-container {
-    height: 50px;
-  }
-
-  .scrolling-divs.slower {
-    margin-left: -4.4rem;
-    margin-top: 0.5rem;
-  }
-}
 
 .page-heading {
   text-align: center;
@@ -1141,29 +1022,6 @@ input[type="number"]:focus {
                 }
 
 
-                .recruit-img {
-                  display: grid;
-                  /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
-                  grid-template-columns: repeat(6, 1fr);
-  
-                  /* Flexible columns */
-                  gap: 40px;
-                  /* Space between images */
-                  padding: 10px;
-                  /* Optional: Add padding around the grid */
-                  justify-content: center;
-                  /* Center the grid items */
-                  align-items: center;
-                  /* Align items vertically */
-              }
-  
-              .recruit-img img {
-                  width: 100%;
-                  height: auto;
-                  border-radius: 5px;
-                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                  background-color: white;
-              }
               
 .gallery img {
   width: 100%;
@@ -1251,7 +1109,56 @@ input[type="number"]:focus {
   /* padding:5px; */
 }
 
+.recruit-img-container47 {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
 
+.recruit-img47 {
+  /* display: grid; */
+  /* grid-template-columns: repeat(12, 1fr); */
+  gap: 40px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  animation: marquee47 var(--marquee-speed) linear infinite;
+}
+.recruit-img47 img{
+  max-width: 80px;
+}
+
+.recruit-img47.reverse47 {
+  animation: marquee-reverse47 var(--marquee-speed) linear infinite;
+}
+
+.recruit-img47 img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+@keyframes marquee47 {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-reverse47 {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(100%);
+  }
+}
 
 
 .page-heading.dark {
