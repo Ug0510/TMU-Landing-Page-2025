@@ -1297,30 +1297,70 @@ iframe {
   transform: rotate(225deg);
 }
 
-/* Media Queries for Smaller Screens */
-@media (max-width: 768px) {
-  .circle-container {
-    width: 90vw;
-    height: 90vw;
-  }
 
+@media (max-width: 992px) {
+  .usp-img{
+    max-width: 50vw;
+  }
+  .circle-container {
+    width: 75vw;
+    height: 75vw;
+    transform: rotate(90deg) translateX(-120%);
+  }
+  
+  .dot span{
+    font-size: 0.6rem;
+    margin-top: 0.3rem;
+    background-color: #00105550;
+  }
+  .controls button img {
+    transform: rotate(-45deg);
+    margin-top: -10rem;
+  }
+  .controls button img.inverted {
+    transform: rotate(135deg);
+  }
   .dot {
-    width: 10vw;
-    height: 12vw;
-    max-width: 60px;
-    max-height: 80px;
+    width: 12vw;
+    height: 14vw;
+    max-width: 50px;
+    max-height: 70px;
+  }
+  #video-testimonial {
+    position: relative;
+  }
+  #video-testimonial .controls{
+    position: absolute;
+    top:30vh;
+    left:50%;
+    transform: translate(-50%);
+    width: fit-content;
+    height: fit-content;
+  }
+  #video-testimonial .page-heading{
+    position: absolute;
+    top:26vh;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .vid-frame img{
+    width: 90vw;
+    margin:auto;
   }
 }
 
 @media (max-width: 540px) {
+  .usp-img{
+    max-width: 50vw;
+  }
   .circle-container {
     width: 75vw;
     height: 75vw;
-    transform: rotate(90deg) translateX(-55%);
+    transform: rotate(90deg) translateX(-78%);
   }
   .circle-container::before {
-    width: 125%;
-    height: 125%;
+    width: 130%;
+    height: 130%;
   }
   .dot span{
     font-size: 0.6rem;
@@ -1328,17 +1368,38 @@ iframe {
     background-color: #00105550;
   }
   .controls button img {
-    transform: rotate(-90deg);
+    transform: rotate(-45deg);
     margin-top: -10rem;
   }
   .controls button img.inverted {
-    transform: rotate(90deg);
+    transform: rotate(135deg);
   }
   .dot {
     width: 12vw;
     height: 14vw;
     max-width: 50px;
     max-height: 70px;
+  }
+  #video-testimonial {
+    position: relative;
+  }
+  #video-testimonial .controls{
+    position: absolute;
+    top:37vh;
+    left:50%;
+    transform: translate(-50%);
+    width: fit-content;
+    height: fit-content;
+  }
+  #video-testimonial .page-heading{
+    position: absolute;
+    top:34vh;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .vid-frame img{
+    width: 90vw;
+    margin:auto;
   }
 }
 
