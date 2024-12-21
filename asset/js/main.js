@@ -465,3 +465,12 @@ popup.addEventListener('click', (e) => {
         closePopup();
     }
 });
+
+
+// Writing js for banner
+   // Initialize dash.js player
+   var player = dashjs.MediaPlayer().create();
+                
+   // Set the source of the video player (MPD manifest file)
+   player.initialize(document.querySelector("#videoElement"), "./asset/video/output.mpd", true);
+  
