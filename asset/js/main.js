@@ -1,3 +1,14 @@
+// playing the main banner video
+
+(function () {
+    // Writing js for banner
+    // Initialize dash.js player
+    var player = dashjs.MediaPlayer().create();
+
+    // Set the source of the video player (MPD manifest file)
+    player.initialize(document.querySelector("#videoElement"), "./asset/video/output.mpd", true);
+
+})();
 // JS for tab button 
 const tabContainer = document.getElementById('tab-btn47');
 let currentPanel = '1';
@@ -196,14 +207,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
 const container = document.getElementById("circleContainer");
 const vidFrame = document.querySelector(".vid-frame");
 const thumbnail = document.getElementById("thumbnail");
-const popup = document.getElementById('popup');
-const closeButton = document.querySelector('.close-button');
-const iframe = popup.querySelector('iframe');
+
 
 const predefinedDots = Array.from(container.children); // Select the 5 predefined dots
 
@@ -221,30 +228,27 @@ const dots = Array.from(container.children);
 const totalDots = dots.length;
 let radius;
 let currentIndex = 0;
+let player;
 
 function calculateRadius() {
     const containerWidth = container.offsetWidth;
     let val = 0.9;
-    
+
     if (window.innerWidth <= 540) {
         val = 1.5;
     }
-    
+
     radius = containerWidth / val;
 }
 
 // function to return iframe src as per the id 
-function getVidSrc(id){
-  
-    switch(id)
-    {
-        case '1':
-            return 'https://www.youtube.com/embed/tmzjg4HDQAI?si=cqG75q4E62mesFxz';
-        case '2':
-            return 'https://www.youtube.com/embed/NL8D4wwUXaA?si=AkynM0snMOM6uxcJ';
-        default:
-            return 'https://www.youtube.com/embed/5rZSGSViPso?si=sZO54Wh6lE14nPI4';
-    }
+
+
+function handleDotClick(e) {
+    const clickedDot = e.target.closest('.dot');
+    const clickedIndex = Array.from(dots).indexOf(clickedDot);
+    currentIndex = clickedIndex;
+    updateDots();
 }
 
 function updateDots() {
@@ -260,7 +264,7 @@ function updateDots() {
         else
             dot.style.transform = `translate(${x}px, ${y}px)`;
 
-        dot.classList.remove("active", "near-active");
+        dot.classList.remove("active", "near-active", "visible");
 
         // make dots visible 
         switch (angle) {
@@ -270,7 +274,8 @@ function updateDots() {
             case 312:
             case 336:
                 dot.classList.add('visible');
-            break;
+                dot.addEventListener('click', handleDotClick);
+                break;
             default:
                 dot.classList.remove('visible');
         }
@@ -278,10 +283,8 @@ function updateDots() {
         if (angle === 0) {
             dot.classList.add("active");
             const id = dot.dataset.id;
-            dot.setAttribute('data-angle',angle);
+            dot.setAttribute('data-angle', angle);
             thumbnail.src = `./asset/img/vid-banner${id}.png`;
-            const path = getVidSrc(id);
-            iframe.setAttribute('src',path); // Update video source
             if (window.innerWidth <= 992) {
                 dot.style.transform = `translate(${x}px, ${y}px) scale(1.6) rotate(-90deg)`;
             } else {
@@ -295,45 +298,61 @@ function updateDots() {
                 dot.style.transform = `translate(${x}px, ${y}px) scale(1.2)`;
         }
     });
+
+    // Replace video with thumbnail if dots are changed
+    if (player) {
+        player.reset();
+        thumbnail.style.display = 'block';
+        vidFrame.querySelector('video').remove();
+    }
 }
 
-thumbnail.addEventListener("click", () => {
-
-    popup.style.display = 'flex';
-    // Call the function when needed (e.g., button click)
-    iframe.setAttribute('src', iframe.getAttribute('src') + '&autoplay=1');
-});
-
 function rotateDots(direction) {
-    currentIndex = (currentIndex - direction + totalDots) % totalDots;
+    currentIndex = (currentIndex + direction + totalDots) % totalDots;
     updateDots();
 }
 
 window.addEventListener("resize", updateDots);
 updateDots();
 
-function closePopup(){
-    popup.style.display = 'none';
-    iframe.setAttribute('src','');
-    updateDots();
+
+// function to return video path as per the dot id
+function getVidSrc(id) {
+
+    switch (id) {
+        case '1':
+            return './asset/video/testimonial/udit/udit.mpd';
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        default:
+            return `/asset/video/output.mpd`;
+    }
 }
 
-    // Close popup when close button is clicked
-closeButton.addEventListener('click', () => {
-    closePopup();
-});
-// Close popup when clicking outside the iframe
-popup.addEventListener('click', (e) => {
-    if (!e.target.closest('.popup-content')) {
-        closePopup();
+// Initialize dash.js player
+function initializePlayer(id) {
+    player = dashjs.MediaPlayer().create();
+    player.initialize(document.createElement('video'),  getVidSrc(id), true);
+    player.attachView(vidFrame.querySelector('video'));
+}
+
+// Handle click event on vid-frame
+vidFrame.addEventListener('click', () => {
+
+
+    // Check if the video element already exists
+    let videoElement = vidFrame.querySelector('video');
+    if (!videoElement) {
+        const dotId = dots[currentIndex].dataset.id;
+        initializePlayer(dotId);
+        thumbnail.style.display = 'none';
+        videoElement = document.createElement('video');
+        videoElement.setAttribute('controls', 'controls');
+        vidFrame.appendChild(videoElement);
+        player.attachView(videoElement);
     }
+
+    player.play();
 });
-
-
-// Writing js for banner
-   // Initialize dash.js player
-   var player = dashjs.MediaPlayer().create();
-                
-   // Set the source of the video player (MPD manifest file)
-   player.initialize(document.querySelector("#videoElement"), "./asset/video/output.mpd", true);
-  
