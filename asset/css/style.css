@@ -933,11 +933,22 @@ input[type="number"]:focus {
   justify-content: center;
   align-items: center;
   display: flex;
-
   animation: marquee47 var(--marquee-speed) linear infinite;
 }
+.recruit-img47:first-child{
+  margin-bottom: 2.5rem;
+}
+
+.recruit-img47 img{
+  max-width: 140px;
+}
+
+@media screen and (max-width:540px) {
+  
 .recruit-img47 img{
   max-width: 80px;
+}
+
 }
 
 .recruit-img47.reverse47 {
