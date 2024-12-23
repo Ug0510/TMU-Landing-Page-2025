@@ -1023,6 +1023,7 @@ input[type="number"]:focus {
 }
 
 .dot {
+  cursor: pointer;
   position: absolute;
   width: 6vw;
   height: 8vw;
