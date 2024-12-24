@@ -242,8 +242,8 @@ function updateDots() {
         if (angle === 0) {
             dot.classList.add("active");
             const id = dot.dataset.id;
-            dot.setAttribute('data-angle', angle);
-            thumbnail.src = `./asset/img/vid-banner${id}.png`;
+            dot.setAttribute('data-angle', angle)
+            thumbnail.src = `./asset/img/video-testimonial/thumbnail/vid-banner${id}.jpg`;
             if (window.innerWidth <= 992) {
                 dot.style.transform = `translate(${x}px, ${y}px) scale(1.6) rotate(-90deg)`;
             } else {
