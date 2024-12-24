@@ -558,8 +558,17 @@ input[type="number"]:focus {
   display: none;
   padding: 20px;
   background-color: #ffffff;
-  border: 1px solid #bebebe;
+  /* border: 1px solid #bebebe; */
   border-radius: 30px;
+}
+.row.gallery .row>div{
+   overflow: hidden;
+   padding:5px;
+   max-height: 35vh;
+   border-radius: 10px;
+   /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); */
+   /* drop-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); */
+   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
 }
 
 .tab-content.active {
