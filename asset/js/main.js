@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var activePanel = document.querySelector('.panel.active');
     if (activePanel) {
         var activeAccordion = activePanel.previousElementSibling;
-        activePanel.style.display = "block";
         activeAccordion.querySelector(".icon").innerHTML = "-";
         activeAccordion.classList.add("clicked");
     }
