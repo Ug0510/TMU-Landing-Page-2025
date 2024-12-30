@@ -329,6 +329,6 @@ vidFrame.addEventListener('click', () => {
 
     closeButton2.addEventListener("click", () => {
       showMoreGallery2.style.display = "none"; // Hide the expanded gallery
-      showMoreButton.style.display = "block"; // Show the "Show More" button
+      showMoreButton.style.display = "inline"; // Show the "Show More" button
       closeButton2.style.display = "none"; // Hide the close button
     });
