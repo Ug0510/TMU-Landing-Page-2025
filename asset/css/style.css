@@ -1306,6 +1306,16 @@ iframe {
   padding: 5px;
 }
 
+@media screen and (max-width: 540px) {
+
+  .gallery-item {
+    border:none;
+    display: flex;
+  justify-content: center;
+  }
+  
+}
+
 .gallery-item-corner {
   margin-top: 0px;
   border-bottom: 2px solid #ddd;
