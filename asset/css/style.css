@@ -11,6 +11,7 @@ body {
 
 :root {
   --yellow-shade: #FEC100;
+  /* --yellow-shade: #E39102; */
   --marquee-speed: 20s;
 }
 
