@@ -116,11 +116,26 @@ $("#custom-navbar").on("click", "li", function () {
         "top": tabPositionTop.top + "px",
     });
 
-    // Tab content logic
+    // Tab content logic with fade transition
     const tabId = $(this).data("tab");
-    $(".custom-tab-content div").removeClass("active-content");
-    $("#" + tabId).addClass("active-content");
+    $(".custom-tab-content div.active-content").fadeOut(500, function () {
+        $(this).removeClass("active-content");
+        $("#" + tabId).fadeIn(500).addClass("active-content");
+    });
 });
+
+// Function to switch to the next tab
+function switchToNextTab() {
+    var currentActiveTab = navbarMenu.find('.active-tab');
+    var nextTab = currentActiveTab.next('li');
+    if (nextTab.length === 0) {
+        nextTab = navbarMenu.find('li').first();
+    }
+    nextTab.click();
+}
+
+// Set interval to switch tabs every 5 seconds
+setInterval(switchToNextTab, 5000);
 
 document.addEventListener('DOMContentLoaded', () => {
     const galleryImages = document.querySelectorAll('.gallery-img');
