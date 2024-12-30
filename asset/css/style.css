@@ -1344,12 +1344,12 @@ iframe {
     #closeButton2 {
       display: none; /* Initially hidden */
       position: sticky;
-      left: 0;
+      left: 100%;
       top: 0;
-      margin-left: -35px;
-      width: 35px;
+      margin-left: -55px;
+      width: 55px;
       height: 30px;
-      background: rgba(5, 13, 104, 0.984);
+      background: rgba(255, 0, 0, 0.984);
       color: white;
       display: flex;
       justify-content: center;
