@@ -88,8 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var activePanel = document.querySelector('.panel.active');
     if (activePanel) {
         var activeAccordion = activePanel.previousElementSibling;
-        activeAccordion.querySelector(".icon").innerHTML = "-";
-        activeAccordion.classList.add("clicked");
+        if(activeAccordion){
+            activeAccordion.querySelector(".icon").innerHTML = "-";
+            activeAccordion.classList.add("clicked");
+        }
     }
 });
 
@@ -329,20 +331,3 @@ vidFrame.addEventListener('click', () => {
 
     player.play();
 });
-
-    // Awards Show More and Close functionality
-    const showMoreButton = document.getElementById("showMoreButton");
-    const showMoreGallery2 = document.getElementById("showMoreGallery2");
-    const closeButton2 = document.getElementById("closeButton2");
-
-    showMoreButton.addEventListener("click", () => {
-      showMoreGallery2.style.display = "flex"; // Show hidden gallery
-      showMoreButton.style.display = "none"; // Hide the "Show More" button
-      closeButton2.style.display = "block"; // Show the close button
-    });
-
-    closeButton2.addEventListener("click", () => {
-      showMoreGallery2.style.display = "none"; // Hide the expanded gallery
-      showMoreButton.style.display = "inline"; // Show the "Show More" button
-      closeButton2.style.display = "none"; // Hide the close button
-    });
