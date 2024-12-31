@@ -1135,7 +1135,8 @@ iframe {
 
 @media (max-width: 992px) {
   .usp-img{
-    max-width: 50vw;
+    max-width: 40vw;
+    height: 100%;
   }
   .circle-container {
     width: 75vw;
@@ -1189,7 +1190,8 @@ iframe {
 
 @media (max-width: 540px) {
   .usp-img{
-    max-width: 50vw;
+    max-width: 45vw;
+    height: 100%;
   }
   .circle-container {
     width: 75vw;
@@ -1388,5 +1390,5 @@ iframe {
 
 
     .carousel-dark .carousel-indicators [data-bs-target]{
-      background-color: #001055;
+      background-color: #001055 !important;
     }
