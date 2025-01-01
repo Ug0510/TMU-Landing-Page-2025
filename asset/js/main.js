@@ -296,13 +296,17 @@ function getVidSrc(id) {
 
     switch (id) {
         case '1':
-            return './asset/video/testimonial/udit/udit.mpd';
+            return "./asset/video/testimonial/udit/output.mpd";
         case '2':
+            return "./asset/video/testimonial/kesar/output.mpd";
         case '3':
+            return "./asset/video/testimonial/aastha/output.mpd";
         case '4':
+            return "./asset/video/testimonial/navodita/output.mpd";
         case '5':
+            return "./asset/video/testimonial/gauri/output.mpd";
         default:
-            return `/asset/video/output.mpd`;
+            return "./asset/video/testimonial/udit/output.mpd";
     }
 }
 
