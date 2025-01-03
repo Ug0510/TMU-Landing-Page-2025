@@ -1020,7 +1020,7 @@ input[type="number"]:focus {
   width: 100vw;
   overflow: hidden;
   position: relative;
-  background-image: url('../img/video-testimonial/banner/vid-test-banner.png');
+  background-image: url('../img/video-testimonial/banner/vid-test-banner.webp');
   background-size: cover;
 }
 
