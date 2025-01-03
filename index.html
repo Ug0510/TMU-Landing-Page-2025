@@ -24,11 +24,33 @@
 
         <!-- All the sections must be written inside it -->
 
-        <div class="banner-container">
-            <div class="logo mt-3 ms-4 d-block d-md-none">
-                <img src="./asset/img/logo_white.png" alt="">
+        <div id="carouselExample90" class="carousel slide d-lg-none" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner" style="background-image: url('./asset/img/banner/back.jpg'); background-size: cover;">
+                <div class="carousel-item active">
+                    <div class="carousel-background" >
+                        <img src="./asset/img/banner/p1.png" class="d-block w-100" alt="Slide 1">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-background">
+                        <img src="./asset/img/banner/p2.png" class="d-block w-100" alt="Slide 2">
+                    </div>
+                </div>
             </div>
-            <div class="temp-banner p-0 m-0 d-none d-md-block">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample90" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample90" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        
+        <div class="banner-container">
+            
+            <div class="temp-banner p-0 m-0 d-none d-lg-block">
                 <!-- Adding optimized video banner -->
                 <video id="videoElement" class="h-100" loop autoplay muted></video>
                 <!-- <video src="./asset/video/banner/website video.mp4" class="h-100 d-none d-lg-block" autoplay muted loop></video>
@@ -146,9 +168,7 @@
             </div>
         </div>
 
-        <div class="d-block d-md-none">
-            <video id="videoElementMobile" class="h-100" loop autoplay muted></video>
-        </div>
+       
 
 
         <!-- Under banner USP Section -->
