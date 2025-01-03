@@ -21,6 +21,12 @@ body {
   overflow: hidden;
   position: relative;
 }
+@media screen and (max-width: 992px) {
+  .banner-container {
+    height: fit-content;
+  }
+  
+}
 
 .temp-banner {
   /* background-image: url(../img/banner.jpg); */
