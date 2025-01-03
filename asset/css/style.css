@@ -266,13 +266,13 @@ body {
   min-height: fit-content;
 }
 
-@media screen and (max-width:540px) {
+@media screen and (max-width:992px) {
   #admission-form-container {
     position: static;
     min-height: fit-content;
   }
   .banner-container{
-    background-color: #00339A;
+    background-color: #fff;
   }
 }
 
@@ -287,9 +287,13 @@ body {
 }
 
 @media screen and (max-width:992px) {
+  .banner-container{
+    height: fit-content;
+    background-color: #003399;
+  }
   #admission-form-container {
-    width: 50vw;
-    max-height: 80vh;
+    width: 70vw;
+   height: fit-content;
     top: 30vh;
   }
 }
