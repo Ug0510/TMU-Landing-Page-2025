@@ -6,7 +6,9 @@
     var player = dashjs.MediaPlayer().create();
     const vidElem = window.innerWidth <= 540 ? document.querySelector("#videoElementMobile") : document.querySelector("#videoElement");
 
-    let vidPath = "./asset/video/banner/desktop/output.mpd";
+    if(vidElem)
+    {
+        let vidPath = "./asset/video/banner/desktop/output.mpd";
     vidElem.classList.remove('w-100');
     vidElem.classList.add('h-100');
 
@@ -21,6 +23,7 @@
 
     // Set the source of the video player (MPD manifest file)
     player.initialize(vidElem, vidPath, true);
+    }
 
 })();
 // JS for tab button 
