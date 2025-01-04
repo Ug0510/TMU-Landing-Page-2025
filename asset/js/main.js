@@ -284,7 +284,9 @@ function updateDots() {
             }
         } else if (angle === 24 || angle === 336) {
             dot.classList.add("near-active");
-            if (window.innerWidth <= 992)
+            if(window.innerWidth <= 540)
+                dot.style.transform = `translate(${x}px, ${y}px) scale(1.0) rotate(-90deg)`;
+            else if (window.innerWidth <= 992)
                 dot.style.transform = `translate(${x}px, ${y}px) scale(1.3) rotate(-90deg)`;
             else
                 dot.style.transform = `translate(${x}px, ${y}px) scale(1.2)`;
