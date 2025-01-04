@@ -741,7 +741,8 @@ input[type="number"]:focus {
 
 /* Vertical Navbar Menu start */
 #custom-navbar {
-  background: #001055;
+  /* background: #001055; */
+  background-color: #1340A3;
   width: 30px;
   height: 50vh;
   overflow: hidden;
