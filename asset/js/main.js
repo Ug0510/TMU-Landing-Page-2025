@@ -374,6 +374,7 @@ vidFrame.addEventListener('click', () => {
     player.play();
 });
 
+// ward desktop view carousel js
 $(document).ready(function() {
     $(".owl-carousel").owlCarousel({
         loop: true, // Enables infinite looping
@@ -387,5 +388,29 @@ $(document).ready(function() {
             768: { items: 1 }, // 4 items for tablets
             1200: { items: 1 } // 6 items for desktops
         }
+    });
+});
+
+
+// Award mobile view light box JS
+document.addEventListener("DOMContentLoaded", function () {
+    const galleryImages = document.querySelectorAll(".gallery-img");
+    const lightboxInner = document.getElementById("lightboxCarouselInner");
+
+    galleryImages.forEach((img, index) => {
+        img.addEventListener("click", function () {
+            // Clear existing lightbox content
+            lightboxInner.innerHTML = "";
+
+            // Populate lightbox carousel with images
+            galleryImages.forEach((galleryImg, i) => {
+                const isActive = index === i ? "active" : "";
+                const carouselItem = `
+                    <div class="carousel-item ${isActive}">
+                        <img src="${galleryImg.src}" class="d-block w-100" alt="Image ${i + 1}">
+                    </div>`;
+                lightboxInner.insertAdjacentHTML("beforeend", carouselItem);
+            });
+        });
     });
 });

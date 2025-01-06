@@ -1338,15 +1338,8 @@ iframe {
   justify-content: center;
   }
   
-  .gallery-img{
-    height: 350px;
-  }
 }
-@media screen and (max-width: 540px) {
-  .gallery-img{
-    height: 200px;
-  }
-}
+
 
 .gallery-item-corner {
   margin-top: 0px;
