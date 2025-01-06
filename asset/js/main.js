@@ -125,21 +125,35 @@ $(".custom-selector").css({
     "top": tabPositionTop.top + "px"
 });
 
-$("#custom-navbar").on("click", "li", function () {
+// Flag to track if a tab switch is in progress
+var isSwitching = false;
+
+// Function to switch tabs
+function switchTab(tabElement) {
+    if (isSwitching) return; // Exit if a switch is already in progress
+    isSwitching = true; // Set the flag to true
+
     $('#custom-navbar ul li').removeClass("active-tab");
-    $(this).addClass('active-tab');
-    var activeHeight = $(this).innerHeight();
-    var tabPositionTop = $(this).position();
+    tabElement.addClass('active-tab');
+    var activeHeight = tabElement.innerHeight();
+    var tabPositionTop = tabElement.position();
     $(".custom-selector").css({
         "top": tabPositionTop.top + "px",
     });
 
     // Tab content logic with fade transition
-    const tabId = $(this).data("tab");
+    const tabId = tabElement.data("tab");
     $(".custom-tab-content div.active-content").fadeOut(500, function () {
         $(this).removeClass("active-content");
-        $("#" + tabId).fadeIn(500).addClass("active-content");
+        $("#" + tabId).fadeIn(500, function () {
+            $(this).addClass("active-content");
+            isSwitching = false; // Reset the flag after the switch is complete
+        });
     });
+}
+
+$("#custom-navbar").on("click", "li", function () {
+    switchTab($(this));
 });
 
 // Function to switch to the next tab
@@ -149,12 +163,19 @@ function switchToNextTab() {
     if (nextTab.length === 0) {
         nextTab = navbarMenu.find('li').first();
     }
-    nextTab.click();
+    switchTab(nextTab);
 }
 
 // Set interval to switch tabs every 5 seconds
-setInterval(switchToNextTab, 5000);
+var tabInterval = setInterval(switchToNextTab, 5000);
 
+// Pause the interval when the user interacts with the tabs
+$("#custom-navbar").on("click", "li", function () {
+    clearInterval(tabInterval);
+    tabInterval = setInterval(switchToNextTab, 5000);
+});
+
+// Lightbox logic
 document.addEventListener('DOMContentLoaded', () => {
     const galleryImages = document.querySelectorAll('.gallery-img');
     const lightbox = document.getElementById('lightbox');
@@ -195,8 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showImage(currentIndex);
     });
 });
-
-
 
 
 const container = document.getElementById("circleContainer");
