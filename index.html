@@ -680,54 +680,56 @@
 
 
         <!-- Modal -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title ms-0" id="imageModalLabel">Gallery</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner" id="carousel-inner">
-                            <!-- Dynamic Images Here -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title ms-0" id="imageModalLabel">Gallery</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner" id="carousel-inner">
+                                <!-- Dynamic Images Here -->
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        const images = document.querySelectorAll('.gallery-img');
-        const carouselInner = document.getElementById('carousel-inner');
+        <script>
+            const images = document.querySelectorAll('.gallery-img');
+            const carouselInner = document.getElementById('carousel-inner');
 
-        images.forEach((img, index) => {
-            img.addEventListener('click', () => {
-                carouselInner.innerHTML = '';
+            images.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    carouselInner.innerHTML = '';
 
-                images.forEach((image, i) => {
-                    const isActive = i === index ? 'active' : '';
-                    const carouselItem = `
+                    images.forEach((image, i) => {
+                        const isActive = i === index ? 'active' : '';
+                        const carouselItem = `
                         <div class="carousel-item ${isActive}">
                             <img src="${image.src}" class="modal-img d-block w-100" alt="Image ${i + 1}">
                         </div>`;
-                    carouselInner.innerHTML += carouselItem;
-                });
+                        carouselInner.innerHTML += carouselItem;
+                    });
 
-                const modal = new bootstrap.Modal(document.getElementById('imageModal'));
-                modal.show();
+                    const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+                    modal.show();
+                });
             });
-        });
-    </script>
+        </script>
 
 
 
@@ -827,7 +829,7 @@
                         <div class="col-lg-11 d-flex flex-column justify-content-center align-items-start">
 
                             <div class="vid-frame mb-4 mx-auto mx-lg-0">
-                                <img id="thumbnail" src="./asset/img/vid-banner.png" alt="Video Thumbnail">
+                                <img id="thumbnail" src="" alt="Video Thumbnail">
                             </div>
                         </div>
                     </div>
@@ -889,7 +891,7 @@
                         </div>
                         <div class="item">
                             <div class="row g-3">
-                                
+
                                 <div class="col-4 gallery-item">
                                     <img src="asset/img/awards/10-01.webp" class="img-fluid gallery-img"
                                         data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 2">
@@ -930,7 +932,7 @@
                         </div>
                         <div class="item">
                             <div class="row g-3">
-                                
+
                                 <div class="col-4 gallery-item">
                                     <img src="asset/img/awards/19-01.webp" class="img-fluid gallery-img"
                                         data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 2">
@@ -994,156 +996,99 @@
                 <img src="asset/img/awards/award.webp" alt="" style="max-height: 30vw; width: 100%; object-fit: contain;">
             </div>
 
-            
-                    <!-- Carousel Items -->
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active">
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <img src="asset/img/awards/1-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 1">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/2-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 2">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/3-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 3">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/4-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 4">
-                            </div>
-                        </div>
+            <!-- Carousel Items -->
+            <div class="carousel-item active">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <img src="asset/img/awards/1-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 1">
                     </div>
-
-                    <!-- Slide 2 -->
-                    <div class="carousel-item">
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <img src="asset/img/awards/5-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 5">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/6-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 6">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/7-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 7">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/8-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 8">
-                            </div>
-                        </div>
+                    <div class="col-6">
+                        <img src="asset/img/awards/2-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 2">
                     </div>
-
-                    <!-- Slide 3 -->
-                    <div class="carousel-item">
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <img src="asset/img/awards/9-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 9">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/10-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 10">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/11-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 11">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/12-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 12">
-                            </div>
-                        </div>
+                    <div class="col-6">
+                        <img src="asset/img/awards/3-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 3">
                     </div>
-                    <!-- Slide 4 -->
-                    <div class="carousel-item">
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <img src="asset/img/awards/13-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 9">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/14-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 10">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/15-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 11">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/16-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 12">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="carousel-item">
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <img src="asset/img/awards/17-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 9">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/18-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 10">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/19-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 11">
-                            </div>
-                            <div class="col-6">
-                                <img src="asset/img/awards/20-01.webp" class="img-fluid gallery-img"
-                                    data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 12">
-                            </div>
-                        </div>
+                    <div class="col-6">
+                        <img src="asset/img/awards/4-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 4">
                     </div>
                 </div>
-
-                <!-- Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
-        </div>
 
-        <!-- Lightbox Modal -->
-<div class="modal fade" id="lightboxModal2" tabindex="-1" aria-labelledby="lightboxModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div id="carouselLightbox" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner" id="lightboxCarouselInner">
-                        <!-- Dynamic content will be added here -->
+            <div class="carousel-item">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <img src="asset/img/awards/5-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 5">
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselLightbox" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselLightbox" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <div class="col-6">
+                        <img src="asset/img/awards/6-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 6">
+                    </div>
+                    <div class="col-6">
+                        <img src="asset/img/awards/7-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 7">
+                    </div>
+                    <div class="col-6">
+                        <img src="asset/img/awards/8-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 8">
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <img src="asset/img/awards/9-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 9">
+                    </div>
+                    <div class="col-6">
+                        <img src="asset/img/awards/10-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 10">
+                    </div>
+                    <div class="col-6">
+                        <img src="asset/img/awards/11-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 11">
+                    </div>
+                    <div class="col-6">
+                        <img src="asset/img/awards/12-01.webp" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 12">
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </div>
+
+        <!-- Lightbox Modal -->
+        <div class="modal fade" id="lightboxModal2" tabindex="-1" aria-labelledby="lightboxModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="carouselLightbox" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner" id="lightboxCarouselInner">
+                                <!-- Dynamic content will be added here -->
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselLightbox"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselLightbox"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         <!-- Footer Section -->
