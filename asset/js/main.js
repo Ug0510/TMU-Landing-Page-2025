@@ -354,3 +354,19 @@ vidFrame.addEventListener('click', () => {
 
     player.play();
 });
+
+$(document).ready(function() {
+    $(".owl-carousel").owlCarousel({
+        loop: true, // Enables infinite looping
+        margin: 10, // Space between items
+        nav: true, // Navigation arrows
+        dots: true, // Pagination dots
+        autoplay: true, // Auto-play enabled
+        autoplayTimeout: 3000, // Auto-play delay (3 seconds)
+        responsive: {
+            0: { items: 1 }, // 2 items for small screens
+            768: { items: 1 }, // 4 items for tablets
+            1200: { items: 1 } // 6 items for desktops
+        }
+    });
+});
