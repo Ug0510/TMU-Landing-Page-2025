@@ -414,3 +414,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+if(window.innerWidth <=540)
+    {
+        const images = document.querySelectorAll('.gallery-img');
+        const carouselInner = document.getElementById('carousel-inner');
+
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                carouselInner.innerHTML = '';
+
+                images.forEach((image, i) => {
+                    const isActive = i === index ? 'active' : '';
+                    const carouselItem = `
+                    <div class="carousel-item ${isActive}">
+                        <img src="${image.src}" class="modal-img d-block w-100" alt="Image ${i + 1}">
+                    </div>`;
+                    carouselInner.innerHTML += carouselItem;
+                });
+
+                const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+                modal.show();
+            });
+        });
+    }
