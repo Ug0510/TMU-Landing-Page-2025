@@ -679,6 +679,58 @@
 
 
 
+        <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title ms-0" id="imageModalLabel">Gallery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="carousel-inner">
+                            <!-- Dynamic Images Here -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.gallery-img');
+        const carouselInner = document.getElementById('carousel-inner');
+
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                carouselInner.innerHTML = '';
+
+                images.forEach((image, i) => {
+                    const isActive = i === index ? 'active' : '';
+                    const carouselItem = `
+                        <div class="carousel-item ${isActive}">
+                            <img src="${image.src}" class="modal-img d-block w-100" alt="Image ${i + 1}">
+                        </div>`;
+                    carouselInner.innerHTML += carouselItem;
+                });
+
+                const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+                modal.show();
+            });
+        });
+    </script>
+
+
+
 
         <!-- Recruiters Section  -->
         <section class="mb-5 stop-overflow">
@@ -687,32 +739,32 @@
                     <div class="page-heading mb-5 ">Recruiters</div>
                     <div class="recruit-img-container47">
                         <div class="recruit-img47">
-                            <img src="./asset/img/recruiters/image_1.webp" alt="">
-                            <img src="./asset/img/recruiters/image_2.webp" alt="">
-                            <img src="./asset/img/recruiters/image_3.webp" alt="">
-                            <img src="./asset/img/recruiters/image_4.webp" alt="">
-                            <img src="./asset/img/recruiters/image_5.webp" alt="">
-                            <img src="./asset/img/recruiters/image_6.webp" alt="">
-                            <img src="./asset/img/recruiters/image_7.webp" alt="">
-                            <img src="./asset/img/recruiters/image_8.webp" alt="">
-                            <img src="./asset/img/recruiters/image_18.webp" alt="">
-                            <img src="./asset/img/recruiters/image_10.webp" alt="">
-                            <img src="./asset/img/recruiters/image_11.webp" alt="">
-                            <img src="./asset/img/recruiters/image_9.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_1.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_2.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_3.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_4.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_5.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_6.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_7.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_8.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_18.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_10.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_11.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_9.webp" alt="">
                         </div>
                         <div class="recruit-img47 reverse47">
-                            <img src="./asset/img/recruiters/image_12.webp" alt="">
-                            <img src="./asset/img/recruiters/image_13.webp" alt="">
-                            <img src="./asset/img/recruiters/image_14.webp" alt="">
-                            <img src="./asset/img/recruiters/image_15.webp" alt="">
-                            <img src="./asset/img/recruiters/image_16.webp" alt="">
-                            <img src="./asset/img/recruiters/image_17.webp" alt="">
-                            <img src="./asset/img/recruiters/image_19.webp" alt="">
-                            <img src="./asset/img/recruiters/image_20.webp" alt="">
-                            <img src="./asset/img/recruiters/image_21.webp" alt="">
-                            <img src="./asset/img/recruiters/image_22.webp" alt="">
-                            <img src="./asset/img/recruiters/image_23.webp" alt="">
-                            <img src="./asset/img/recruiters/image_24.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_12.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_13.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_14.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_15.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_16.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_17.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_19.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_20.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_21.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_22.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_23.webp" alt="">
+                            <img loading="lazy" src="./asset/img/recruiters/image_24.webp" alt="">
                         </div>
                     </div>
                     <!-- <div class="col-4 p-2 d-flex justify-content-center align-items-center side-heading">
@@ -790,7 +842,7 @@
             <h2 class="text-center mb-4 page-heading mb-5">Proven to Be Excellent</h2>
             <div class="row mt-5 pt-3">
                 <div class="col-lg-5 col-12">
-                    <img class="side-image" src="asset/img/awards/award.png" alt="">
+                    <img class="side-image" src="asset/img/awards/award.webp" alt="">
                 </div>
                 <div class="col-lg-7 col-12">
                     <div class="owl-carousel owl-theme">
@@ -916,6 +968,7 @@
                                         data-bs-toggle="modal" data-bs-target="#lightboxModal" alt="Image 2">
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -938,15 +991,14 @@
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 </div>
-
                 <!-- Slides -->
                 <div class="carousel-inner pb-5 position-relative">
                     <div class="position-absolute"
                         style="top:58%; left: 50%; transform: translate(-50%,-50%); opacity: 0.4;">
                         <img src="asset/img/awards/award.png" alt=""
                             style="max-height: 30vw; width: 100%; object-fit: contain;">
-                    </div>
 
+                    </div>
                     <!-- Carousel Items -->
                     <!-- Slide 1 -->
                     <div class="carousel-item active">
@@ -1012,6 +1064,7 @@
                                     data-bs-toggle="modal" data-bs-target="#lightboxModal2" alt="Image 12">
                             </div>
                         </div>
+
                     </div>
                 </div>
 
