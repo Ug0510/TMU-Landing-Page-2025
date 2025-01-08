@@ -447,3 +447,23 @@ if(window.innerWidth <=540)
             accordionItem.classList.toggle('active');
         });
     });
+
+    // Why TMU section js started
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('modalCard');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalImage = document.getElementById('modalImage');
+        const modalDescription = document.getElementById('modalDescription');
+
+        modal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const image = button.getAttribute('data-image');
+            const title = button.getAttribute('data-title');
+            const description = button.closest('.card-text').getAttribute('data-full-description');
+
+            modalTitle.textContent = title;
+            modalImage.textContent = image;
+            modalDescription.textContent = description;
+        });
+    });
+    // Why TMU section js end
