@@ -1507,7 +1507,10 @@ iframe {
   text-align: left;
 }
 .align-left h5{
-  color: #fec100;
+  color: #ffffff;
+  margin-top: 10px;
+  font-size: 26px;
+  font-weight: 400;
 }
 .align-left p{
   color: #c1c1c1;
@@ -1533,9 +1536,40 @@ iframe {
 .yelllo{
   color:#fec100;
 }
+.custom-gap {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adds 15px spacing between items */
+}
+
+.modal-button {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255); /* Black circle background */
+  padding: 10px; /* Space for the image inside the circle */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.modal-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-button:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  background-color: #a1a1a1; /* Slightly lighter black on hover */
+}
 
 .why-tmu-icon{
-  height: 70px;
+  height: 60px;
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(132deg) brightness(111%) contrast(102%);
 }
   /* Why TMU section css end */
