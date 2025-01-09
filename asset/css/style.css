@@ -469,6 +469,12 @@ input[type="number"]:focus {
   font-family: ca;
   font-family: 'Canela Text Trial', sans-serif;
 }
+
+@media screen and (max-width:540px) {
+  .page-heading{
+    font-size: 1.5rem;
+  }
+}
 .page-heading.fs-small{
   font-size: 1.5rem;
 }
@@ -1405,3 +1411,133 @@ iframe {
     #closeButton2:hover {
       background: rgba(156, 156, 156, 0.9);
     }
+
+
+    /* ACCordion css */
+    .accordion {
+        max-width: 70vw;
+        margin: 0 auto;
+    }
+
+    @media screen and (max-width:992px) {
+        .accordion{
+            max-width: 90vw;
+        }
+    }
+
+    .accordion-item {
+        background-color: #fff;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border: none;
+        box-shadow: none;
+
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    }
+
+    .accordion-header {
+        width: 100%;
+        padding: 15px 20px;
+        text-align: left;
+        border: none;
+        background-color: #F1F2F4;
+        color: #848E9F;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        font-weight: 600;
+    }
+
+    .accordion-header .icon {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .accordion-content {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        background-color: #F1F2F4;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .accordion-content ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        background-color: white;
+        padding: 2rem;
+        border-radius: 15px;
+    }
+
+    .accordion-content li {
+        margin-bottom: 10px;
+        color:#8892A2;
+        list-style-type: disc;
+    }
+    .accordion-content li::marker{
+        color:#555b64;
+        /* font-size: 24px; */
+    }
+    .accordion-item.active .accordion-content {
+        max-height: 500px;
+        min-height: fit-content;
+        /* Adjust based on content */
+        padding: 20px;
+    }
+
+    .accordion-item.active .accordion-header .icon {
+        transform: rotate(45deg);
+    }
+
+/* Why TMU section css start */
+.content-section {
+  background-color: #001055;
+  padding: 30px 20px;
+  border-radius: 15px;
+}
+.align-left{
+  text-align: left;
+}
+.align-left h5{
+  color: #fec100;
+}
+.align-left p{
+  color: #c1c1c1;
+  text-align: justify;
+}
+.content {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.logo {
+  width: 100px;
+  margin: 0 auto 20px;
+}
+.icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.read-more {
+  color: #ffe692;
+  font-size: 10px;
+  cursor: pointer;
+}
+.yelllo{
+  color:#fec100;
+}
+
+.why-tmu-icon{
+  height: 50px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(132deg) brightness(111%) contrast(102%);
+}
+  /* Why TMU section css end */
+  
