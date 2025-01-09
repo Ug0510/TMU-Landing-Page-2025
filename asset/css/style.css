@@ -1502,7 +1502,6 @@ iframe {
 .content-section {
   background-color: #001055;
   padding: 30px 20px;
-  border-radius: 15px;
 }
 .align-left{
   text-align: left;
@@ -1519,7 +1518,7 @@ iframe {
   margin-bottom: 20px;
 }
 .logo {
-  width: 100px;
+  width: 220px;
   margin: 0 auto 20px;
 }
 .icon {
@@ -1536,7 +1535,7 @@ iframe {
 }
 
 .why-tmu-icon{
-  height: 50px;
+  height: 70px;
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(132deg) brightness(111%) contrast(102%);
 }
   /* Why TMU section css end */
