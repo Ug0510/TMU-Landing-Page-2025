@@ -379,7 +379,7 @@ $(document).ready(function() {
     $(".owl-carousel").owlCarousel({
         loop: true, // Enables infinite looping
         margin: 10, // Space between items
-        nav: true, // Navigation arrows
+        nav: false, // Navigation arrows
         dots: true, // Pagination dots
         autoplay: true, // Auto-play enabled
         autoplayTimeout: 3000, // Auto-play delay (3 seconds)
