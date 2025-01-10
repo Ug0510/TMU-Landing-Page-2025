@@ -1607,3 +1607,11 @@ iframe {
     display: block;
     margin: 0 auto 0px; /* Center the image */
   }
+  .modal.show .modal-dialog{
+    top:30%
+  }
+  @media (min-width: 576px){
+    .modal-dialog{
+      max-width: 80%;
+    }  
+  }
