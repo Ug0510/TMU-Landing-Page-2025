@@ -1558,19 +1558,45 @@ iframe {
   height: 100%;
   object-fit: contain;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 20%;
+  left: 20%;
   transform: translate(-50%, -50%);
 }
 
 .modal-button:hover {
-  transform: scale(1.1); /* Slight zoom effect on hover */
-  background-color: #a1a1a1; /* Slightly lighter black on hover */
+  transform: translate(30%, 0%);
 }
 
 .why-tmu-icon{
   height: 60px;
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(132deg) brightness(111%) contrast(102%);
+}
+
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #ffffff;
+  transition: width 0.1s ease-in, width 0.3s ease-out;
+}
+
+.underline-animation:hover::after {
+  width: 100%;
+  transition: width 0.3s ease-out;
+}
+
+.underline-animation:hover {
+  color: #ffffff;
 }
   /* Why TMU section css end */
   
