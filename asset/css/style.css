@@ -1605,5 +1605,5 @@ iframe {
     max-height: 60px;
     object-fit: contain;
     display: block;
-    margin: 0 auto 15px; /* Center the image */
+    margin: 0 auto 0px; /* Center the image */
   }
