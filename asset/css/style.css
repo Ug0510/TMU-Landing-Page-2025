@@ -1600,3 +1600,10 @@ iframe {
 }
   /* Why TMU section css end */
   
+  #modalImage {
+    width: 20%;
+    max-height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px; /* Center the image */
+  }

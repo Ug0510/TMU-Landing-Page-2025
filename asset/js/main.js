@@ -449,21 +449,22 @@ if(window.innerWidth <=540)
     });
 
     // Why TMU section js started
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const modal = document.getElementById('modalCard');
         const modalTitle = document.getElementById('modalTitle');
-        const modalIcon = document.getElementById('modalIcon');
+        const modalImage = document.getElementById('modalImage');
         const modalDescription = document.getElementById('modalDescription');
-
-        modal.addEventListener('show.bs.modal', function(event) {
+    
+        modal.addEventListener('show.bs.modal', function (event) {
             const button = event.relatedTarget;
-            const icon = button.getAttribute('data-icon');
             const title = button.getAttribute('data-title');
+            const image = button.getAttribute('data-image');
             const description = button.closest('.card-text').getAttribute('data-full-description');
-
+    
             modalTitle.textContent = title;
-            modalIcon.textContent = icon;
+            modalImage.src = image; // Dynamically set the image URL
             modalDescription.textContent = description;
         });
     });
+    
     // Why TMU section js end
