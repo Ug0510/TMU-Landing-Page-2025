@@ -1621,7 +1621,8 @@ iframe {
     padding: 50px;
   }
   .modal.show .modal-dialog{
-    top:30%
+    top:50%;
+    transform: translateY(-50%);
   }
   @media (min-width: 576px){
     .modal-dialog{
