@@ -463,7 +463,7 @@ if(window.innerWidth <=540)
     
             modalTitle.textContent = title;
             modalImage.src = image; // Dynamically set the image URL
-            modalDescription.textContent = description;
+            modalDescription.innerHTML = description;
         });
     });
     
