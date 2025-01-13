@@ -1,31 +1,3 @@
-// playing the main banner video
-
-document.addEventListener('DOMContentLoaded', () => {
-    (function () {
-        // Writing JS for banner
-        const player = dashjs.MediaPlayer().create();
-        const vidElem = window.innerWidth <= 540 ? document.querySelector("#videoElementMobile") : document.querySelector("#videoElement");
-
-        if (vidElem) {
-            let vidPath = "./asset/video/banner/desktop/output.mpd";
-
-            // Apply classes for styling
-            vidElem.classList.remove('w-100');
-            vidElem.classList.add('h-100');
-
-            if (window.innerWidth <= 540) {
-                vidPath = "./asset/video/banner/mobile/output.mpd";
-                vidElem.classList.remove('h-100');
-                vidElem.classList.add('w-100');
-            } else if (window.innerWidth <= 992) {
-                vidPath = "./asset/video/banner/desktop/output.mpd";
-            }
-
-            // Set the source of the video player (MPD manifest file)
-            player.initialize(vidElem, vidPath, true);
-        }
-    })();
-});
 
 // JS for tab button 
 const tabContainer = document.getElementById('tab-btn47');

@@ -207,6 +207,37 @@
         </div>
 
 
+        <script>
+            // playing the main banner video
+
+            (function () {
+                // Writing js for banner
+                // Initialize dash.js player
+                var player = dashjs.MediaPlayer().create();
+                const vidElem = window.innerWidth <= 540 ? document.querySelector("#videoElementMobile") : document.querySelector("#videoElement");
+
+                if (vidElem) {
+                    let vidPath = "./asset/video/banner/desktop/output.mpd";
+                    vidElem.classList.remove('w-100');
+                    vidElem.classList.add('h-100');
+
+                    if (window.innerWidth <= 540) {
+                        vidPath = "./asset/video/banner/mobile/output.mpd";
+                        vidElem.classList.remove('h-100');
+                        vidElem.classList.add('w-100');
+                    }
+                    else if (window.innerWidth <= 992) {
+                        vidPath = "./asset/video/banner/desktop/output.mpd";
+                    }
+
+                    // Set the source of the video player (MPD manifest file)
+                    player.initialize(vidElem, vidPath, true);
+                }
+
+            })();
+        </script>
+
+
 
 
         <!-- Under banner USP Section -->
@@ -1170,7 +1201,7 @@
                                         Students benefit from extensive mentorship, state-of-the-art laboratory facilities for product development and testing, and coworking spaces that foster collaboration. The Centre also offers invaluable networking opportunities, connecting startups with industry experts, potential collaborators, and investors to accelerate growth. Additionally, it assists with DPIIT registration, ensuring official recognition and access to various benefits. Diverse funding avenues, including private investors, government grants, and in-house support, enable startups to scale effectively.
                                         ">
                                     <span class="read-more" data-bs-toggle="modal" data-bs-target="#modalCard"
-                                    data-image="asset/img/icons/2.png" data-title="Business Incubation Centre">
+                                        data-image="asset/img/icons/2.png" data-title="Business Incubation Centre">
                                         <img class="modal-button" src="asset/img/icons/arrow-1.png">
                                     </span>
                                 </p>
@@ -1188,8 +1219,8 @@
                                 <p class="card-text" data-full-description="The Corporate Resource Centre (CRC) at TMU is a dedicated unit focused on enhancing students' career prospects. Serving as a vital link between academic learning and professional opportunities, CRC provides a range of services, including career counselling, internships, placements, and job search assistance.
                                     By equipping students with the resources and support needed for career development, the Centre ensures they are well-prepared to excel in their chosen fields. With an impressive placement rate of 82%, CRC demonstrates its effectiveness in guiding students towards successful career paths.
                                     "><span class="read-more" data-bs-toggle="modal" data-bs-target="#modalCard"
-                                    data-image="asset/img/icons/3.png" data-title="Corporate Resource Centre"><img class="modal-button"
-                                            src="asset/img/icons/arrow-1.png"></span>
+                                        data-image="asset/img/icons/3.png" data-title="Corporate Resource Centre"><img
+                                            class="modal-button" src="asset/img/icons/arrow-1.png"></span>
                                 </p>
                             </div>
                         </div>
@@ -1201,9 +1232,11 @@
                                         <h5 class="underline-animation yellow">Super Speciality Hospital</h5>
                                     </a>
                                 </div>
-                                <p class="card-text" data-full-description="TMU Hospital is a leading healthcare facility offering super-speciality care and advanced clinical services with a bed strength of 900+. It features modern diagnostic facilities, modular operation theatres, and specialised departments, including cardiology, neurology, gastroenterology, and orthopaedics. Equipped with cutting-edge technology like MRI, CT, and dialysis units, the hospital provides 24/7 emergency and trauma care, serving Moradabad and surrounding districts. The hospital also boasts a modern infertility centre, a well-equipped blood bank, and a dedicated coronary care unit, ensuring comprehensive medical support on campus. It also offers hands-on practical training for medical, nursing, and allied health students, allowing them to gain real-world experience in a professional environment."><span class="read-more" data-bs-toggle="modal" data-bs-target="#modalCard"
-                                    data-image="asset/img/icons/3.png" data-title="Super Speciality Hospital"><img class="modal-button"
-                                            src="asset/img/icons/arrow-1.png"></span>
+                                <p class="card-text"
+                                    data-full-description="TMU Hospital is a leading healthcare facility offering super-speciality care and advanced clinical services with a bed strength of 900+. It features modern diagnostic facilities, modular operation theatres, and specialised departments, including cardiology, neurology, gastroenterology, and orthopaedics. Equipped with cutting-edge technology like MRI, CT, and dialysis units, the hospital provides 24/7 emergency and trauma care, serving Moradabad and surrounding districts. The hospital also boasts a modern infertility centre, a well-equipped blood bank, and a dedicated coronary care unit, ensuring comprehensive medical support on campus. It also offers hands-on practical training for medical, nursing, and allied health students, allowing them to gain real-world experience in a professional environment.">
+                                    <span class="read-more" data-bs-toggle="modal" data-bs-target="#modalCard"
+                                        data-image="asset/img/icons/3.png" data-title="Super Speciality Hospital"><img
+                                            class="modal-button" src="asset/img/icons/arrow-1.png"></span>
                                 </p>
                             </div>
                         </div>
@@ -1222,8 +1255,8 @@
                                 <p class="card-text" data-full-description="TMU’s membership with Amazon Web Services (AWS) Academy bridges academia and industry by equipping students with in-demand cloud computing skills. Through this programme, students gain access to industry-aligned courses, certifications, and career opportunities in the rapidly growing cloud sector.
                                     Faculty members also receive expert mentorship, enhancing their ability to deliver innovative education. This programme provides a comprehensive curriculum designed and maintained by AWS experts, helping educators and students stay at the forefront of cloud innovation. By embedding AWS Academy courses into its curriculum, TMU is cultivating a new generation of cloud computing professionals ready to tackle global challenges.
                                     "><span class="read-more" data-bs-toggle="modal" data-bs-target="#modalCard"
-                                    data-image="asset/img/icons/4.png" data-title="AWS Academy Programme"><img class="modal-button"
-                                            src="asset/img/icons/arrow-1.png"></span>
+                                        data-image="asset/img/icons/4.png" data-title="AWS Academy Programme"><img
+                                            class="modal-button" src="asset/img/icons/arrow-1.png"></span>
                                 </p>
                             </div>
                         </div>
@@ -1239,7 +1272,8 @@
                                         By adopting a national credit framework and outcome-based education (OBE), the University ensures students receive an education aligned with industry standards. The establishment of Centres of Excellence in various technology domains further underlines TMU’s commitment to future-ready learning.
                                         ">
                                     <span class="read-more" data-bs-toggle="modal" data-bs-target="#modalCard"
-                                    data-image="asset/img/icons/5.png" data-title="National Education Policy (NEP) 2020 Implementation"><img
+                                        data-image="asset/img/icons/5.png"
+                                        data-title="National Education Policy (NEP) 2020 Implementation"><img
                                             class="modal-button" src="asset/img/icons/arrow-1.png"></span>
                                 </p>
                             </div>
@@ -1255,13 +1289,11 @@
                                 <p class="card-text" data-full-description="Understanding that 88% of a candidate’s success in corporate interviews depends on soft skills, the Centre for Teaching, Learning and Development at TMU focuses on fostering essential life skills alongside academic excellence.
                                     The Centre offers training in quantitative, reasoning, and verbal abilities while enhancing interpersonal skills such as communication and teamwork. This holistic approach ensures students are not only academically competent but also equipped to meet real-world challenges, making them truly career-ready.
                                     ">
-                                    <span class="read-more" 
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="#modalCard" 
-                                    data-title="Centre for Teaching, Learning and Development" 
-                                    data-image="asset/img/icons/6.png">
-                                <img class="modal-button" src="asset/img/icons/arrow-1.png" alt="Open Modal">
-                              </span>
+                                    <span class="read-more" data-bs-toggle="modal" data-bs-target="#modalCard"
+                                        data-title="Centre for Teaching, Learning and Development"
+                                        data-image="asset/img/icons/6.png">
+                                        <img class="modal-button" src="asset/img/icons/arrow-1.png" alt="Open Modal">
+                                    </span>
 
                                 </p>
                             </div>
@@ -1279,13 +1311,10 @@
                                 Centre of Excellence in Civil Engineering by Ultratech Cement<br>
                                 Centre of Excellence for Indian Knowledge System</p>
                                     ">
-                                    <span class="read-more" 
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="#modalCard" 
-                                    data-title="Specific Centres of Learning" 
-                                    data-image="asset/img/icons/6.png">
-                                <img class="modal-button" src="asset/img/icons/arrow-1.png" alt="Open Modal">
-                              </span>
+                                    <span class="read-more" data-bs-toggle="modal" data-bs-target="#modalCard"
+                                        data-title="Specific Centres of Learning" data-image="asset/img/icons/6.png">
+                                        <img class="modal-button" src="asset/img/icons/arrow-1.png" alt="Open Modal">
+                                    </span>
 
                                 </p>
                             </div>
@@ -1295,14 +1324,15 @@
             </div>
 
             <style>
-                #modalImage{
+                #modalImage {
                     background-color: #00105520;
                     padding: 0.6rem 0.8rem;
                     box-sizing: content-box;
                     border-radius: 15px;
                 }
+
                 @media screen and (max-width:540px) {
-                    #modalDescription{
+                    #modalDescription {
                         max-height: 40vh;
                         overflow: scroll;
                     }
@@ -1313,19 +1343,21 @@
             <div class="modal fade" id="modalCard" tabindex="-1">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" style="top: 20px; right: 20px; z-index: 9999;"></button>
+                        <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal"
+                            style="top: 20px; right: 20px; z-index: 9999;"></button>
 
                         <div class="modal-body">
                             <img id="modalImage" alt="Modal Image">
                             <div class="d-flex justify-content-between align-items-center position-relative mt-3">
                                 <h5 class="modal-title mx-auto" id="modalTitle">Modal Title</h5>
                             </div>
-                            
-                            <p id="modalDescription" class="mt-3" style="text-align: justify;">Description goes here.</p>
+
+                            <p id="modalDescription" class="mt-3" style="text-align: justify;">Description goes here.
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
         </section>
         <!-- Why TMU section Ends -->
 
